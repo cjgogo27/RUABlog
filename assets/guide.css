@@ -15,3 +15,4 @@ figure{margin:24px 0}.still img{width:100%;height:auto;display:block;border-radi
 .home .tablewrap td:first-child{width:29%}
 .textintro{display:block}.textintro .intro{max-width:48rem}
 .navgroup{display:block;margin:15px 0 2px;color:var(--muted);font-weight:600}
+.architecture{margin:24px 0;scroll-margin-top:85px}.architecture img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;cursor:zoom-in}.architecture figcaption{margin:7px 0;color:var(--muted)}.subchapter{border-left:2px solid var(--line);margin-left:15px;padding-left:5px}

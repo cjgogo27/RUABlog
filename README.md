@@ -4,14 +4,17 @@
 
 [中文网站](https://cjgogo27.github.io/RUABlog/) · [English site](https://cjgogo27.github.io/RUABlog/index-en.html)
 
+[![机器人策略的执行接口](assets/policy-routes.png)](assets/policy-routes.png)
+
+*从前两行对照 Direct 的末端动作反馈与 Agentic 的程序修复、技能复用。后两行补充规划与动作审阅的位置。*
 
 ## 两条主线
 
 - [Direct Policy · 直接动作](chapters/zh/routes.md) · [Direct Policy](chapters/en/routes.md)
 - [Agentic Policy · 程序与工具](chapters/zh/piper.md) · [Agentic Policy](chapters/en/piper.md)
+  - [项目实录 · Piper 与 TERM](chapters/zh/term.md) · [Case study · Piper and TERM](chapters/en/term.md)
 
 ## 实验与延伸阅读
 
-- [示范、修复与蒸馏](chapters/zh/term.md) · [Learning from execution](chapters/en/term.md)
 - [近两个月的工作](chapters/zh/survey.md) · [Two months of RUA](chapters/en/survey.md)
 - [分层执行与干预](chapters/zh/hierarchy.md) · [Hierarchy and intervention](chapters/en/hierarchy.md)

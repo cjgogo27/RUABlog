@@ -20,4 +20,8 @@ On Piper I would first ask GPT a question at a primitive boundary: “Did the ca
 ## ENPIRE works on a different clock
 The preceding loops decide how the current attempt proceeds. **ENPIRE** joins scene reset, physical execution, verification and policy refinement into an experimental loop. The next decision might change the policy for the next run. Its showcased 99% uses pass@8: a subtask in one long rollout gets up to eight retries conditioned on previous failures. That measures sustained recovery. For first-grasp reliability, look separately at pass@1 and how much time the subsequent attempts consume. [ENPIRE evaluation and retry definition](https://research.nvidia.com/labs/gear/enpire/)
 
+[![ENPIRE framework for physical policy improvement](../../assets/enpire-framework.png)](../../assets/enpire-framework.png)
+
+*The environment handles reset and verification, policy improvement produces candidates, robots run trials, and the coding agent uses the results to guide the next revision. · [Xiao et al., ENPIRE, Figure 2](https://arxiv.org/html/2606.19980v2#S0.F2)*
+
 [中文](../zh/hierarchy.md) · [English](../en/hierarchy.md)

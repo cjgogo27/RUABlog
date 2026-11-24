@@ -8,6 +8,10 @@ The gripper has closed; the can is still on the table. If the last call returned
 ## Tool granularity sets the observation schedule
 **Guava** gives teacher and student a common set of perception and manipulation tools. A model decision selects a tool and arguments, then receives an updated image, gripper state or execution feedback. For the can, a candidate sequence is “locate → align → grasp → check → transport”. A miss at grasp time invalidates the rest of that sequence.
 
+[![Guava’s shared manipulation harness and distillation pipeline](../../assets/guava-overview.png)](../../assets/guava-overview.png)
+
+*The teacher collects interactions through tools in simulation. The trained student uses the same interface at deployment. · [Guava project page](https://guava-harness.github.io/#overview)*
+
 In the authors’ harness study on seven tasks with fifteen trials each, GPT-5.4 achieved 56.2% with images alone, 77.1% with images plus gripper state, 88.6% with the full single-action replanning interface, and 82.9% with multi-action replanning. The first comparison tests missing state; the second tests the feedback schedule. A real rollout makes the distinction tangible. The can contacted the bin rim and the controller interrupted motion. The agent used that return to move sideways before it resumed placement. [Guava ablations and recovery](https://guava-harness.github.io/)
 
 **K1 moves more work into perception tools.** The agent queries calibrated depth, persistent anchors, measurements and grasp hypotheses before choosing generic motions. On matched LIBERO-PRO tasks, the same Astra scored 61.1% with an RGB harness and 88.9% with K1. This varies a package of perception capabilities. It suggests a narrower Piper experiment: fix the model, scenes and retry budget, vary target binding alone and count how often a neighbouring object is grasped. [Robo-Harness K1](https://arxiv.org/abs/2609.29389)
@@ -18,6 +22,6 @@ Consider a missed grasp as a teaching example. A tool agent might issue three su
 
 **ASPIRE** adds a learning loop around the program. It reads a failed call, the return and visual evidence, edits the program, validates it on new executions and stores a retrievable skill. A later robot must still bind that skill to the geometry in front of it. In cross-embodiment experiments, the authors report both the tokens needed to reach a first working physical program and that program’s held-out success. These measure debugging cost and reuse quality, respectively. [ASPIRE experiments and limitations](https://research.nvidia.com/labs/gear/aspire/)
 
-**A Piper debugging example.** On a red-object approach, the path changed its tilt while the fingertip offset was still computed at the previous orientation. Descent drifted sideways by roughly 5.4 mm. Asking the model to identify the object again would not correct it. The requested target, chosen orientation and measured fingertip path together locate the error inside the tool. The same logic applies to program evaluation: one generated loop can represent ten physical attempts.
+[Case study · Piper and TERM](term.md)
 
 [中文](../zh/piper.md) · [English](../en/piper.md)

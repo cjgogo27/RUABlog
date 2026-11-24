@@ -20,4 +20,8 @@
 ## ENPIRE 在另一个时间尺度上工作
 前两节讨论同一场动作怎样继续。**ENPIRE** 把重置场景、执行策略、验证结果、再开发下一版策略串成真机实验循环。对它来说，“下一步”有时是修改下一轮实验要用的策略。其展示任务上的 99% 使用 pass@8：单次长流程内，每个子任务可依据历史失败最多重试八次。这是持续恢复的证据。若要知道首次抓罐的可靠性，应另看 pass@1，以及八次里每次实际花了多长时间。[ENPIRE 实验及 pass@8 定义](https://research.nvidia.com/labs/gear/enpire/)
 
+[![ENPIRE 真机策略改进框架](../../assets/enpire-framework.png)](../../assets/enpire-framework.png)
+
+*环境负责重置和验证，策略改进模块产生候选，机器人执行试验，编码代理根据记录决定下一轮修改。 · [Xiao 等，ENPIRE 论文图 2](https://arxiv.org/html/2606.19980v2#S0.F2)*
+
 [中文](../zh/hierarchy.md) · [English](../en/hierarchy.md)
