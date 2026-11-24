@@ -22,6 +22,67 @@ Consider a missed grasp as a teaching example. A tool agent might issue three su
 
 **ASPIRE** adds a learning loop around the program. It reads a failed call, the return and visual evidence, edits the program, validates it on new executions and stores a retrievable skill. A later robot must still bind that skill to the geometry in front of it. In cross-embodiment experiments, the authors report both the tokens needed to reach a first working physical program and that program’s held-out success. These measure debugging cost and reuse quality, respectively. [ASPIRE experiments and limitations](https://research.nvidia.com/labs/gear/aspire/)
 
+## Comparing robot-use agents
+After a missed grasp, Guava’s model reads a tool result, a Code as Policies program can take a conditional branch, and ASPIRE’s coding agent can revise the program after a trial. Trace which component receives the evidence in each figure. SayCan is an early skill-selection reference using PaLM. OpenRUA uses Claude Code, and uni-robot-agent demonstrates the interface with open models.
+
+### What does the model decide in one turn?
+
+**Astranomy · Agentic** · [Primary source](https://research.nvidia.com/labs/srl/projects/astranomy/)
+
+[![Views, task and robot state → Persistent session with optional tools → EEF target and step count → Controller acts](../../diagrams/en/astranomy-agentic.svg)](../../diagrams/en/astranomy-agentic.svg)
+
+This is the EEF configuration. It retains a geometric action interface, while the decision session persists across attempts and can inspect images or run calculations.
+
+**Guava** · [Primary source](https://guava-harness.github.io/)
+
+[![Image, gripper state and history → Teacher or Guava-4B → One tool name and arguments → Perception or manipulation tool](../../diagrams/en/guava.svg)](../../diagrams/en/guava.svg)
+
+An alignment result only establishes alignment. The model reads the return before it can decide to close the gripper. Teacher and student share the tool interface.
+
+**Robo-Harness K1** · [Primary source](https://arxiv.org/abs/2609.29389)
+
+[![Image and task → VLM queries scene geometry → Calibrated depth, anchors and grasps → VLM selects a generic motion → Arm executes](../../diagrams/en/k1.svg)](../../diagrams/en/k1.svg)
+
+A geometry query can leave the arm still. The agent can refer to the same visual anchor, inspect size or depth, and only then choose an approach.
+
+**SayCan** · [Primary source](https://say-can.github.io/)
+
+[![Task and skill history / Current robot state → LM scores skill relevance / Value scores skill feasibility → Multiply scores and select skill → Execute selected skill policy](../../diagrams/en/saycan.svg)](../../diagrams/en/saycan.svg)
+
+The skill vocabulary is fixed. A grasp can be a good linguistic continuation and still lose to another skill when its feasibility in the current state is low.
+
+### What executes the generated program?
+
+**Code as Policies** · [Primary source](https://code-as-policies.github.io/)
+
+[![Instruction and API examples → Code-generating LM → Python policy loops and tests → Perception APIs and control calls](../../diagrams/en/code-as-policies.svg)](../../diagrams/en/code-as-policies.svg)
+
+The generated program can query a detector until a condition holds. This feedback runs inside the program and reuses the same code at each check.
+
+**VoxPoser** · [Primary source](https://voxposer.github.io/)
+
+[![Task → LM writes spatial constraints / Scene → grounded 3D observations → Compose 3D value maps → Motion planner solves trajectory → Arm executes](../../diagrams/en/voxposer.svg)](../../diagrams/en/voxposer.svg)
+
+Approach the handle and avoid the cup can be represented as separate maps. A planner acts on their composition; updated geometry can reuse the same program.
+
+**ASPIRE** · [Primary source](https://research.nvidia.com/labs/gear/aspire/)
+
+[![Task and retrieved skills → Coding agent writes or repairs → Run policy code via robot APIs → Inspect traces and validate fixes → Save validated skill](../../diagrams/en/aspire.svg)](../../diagrams/en/aspire.svg)
+
+The two returns operate at different times. A trace can repair the current program. A validated repair can enter the skill library for retrieval on a later task.
+
+**OpenRUA** · [Primary source](https://arxiv.org/abs/2610.02459)
+
+[![Task and ROS 2 docs → Coding agent in a terminal → Read sensor files write control code → Execute via native ROS 2](../../diagrams/en/openrua.svg)](../../diagrams/en/openrua.svg)
+
+The interface is a documented workspace. The agent organizes observation scripts, ROS 2 commands and retries using its terminal.
+
+**uni-robot-agent** · [Primary source](https://arxiv.org/abs/2611.01560)
+
+[![Task, images and robot state → Open-weight model → Shared tools for vision, code, action → Simulation or physical backend](../../diagrams/en/uni-robot-agent.svg)](../../diagrams/en/uni-robot-agent.svg)
+
+OpenRUA starts from native ROS 2. This work standardizes tools across backends. In a no-depth example, the agent triangulates from multiple views using calibration and its own code.
+
 [Case study · Piper and TERM](term.md)
 
 [中文](../zh/piper.md) · [English](../en/piper.md)

@@ -22,6 +22,67 @@
 
 **ASPIRE** 在程序外又加了一轮学习：读取某次失败的调用、返回和视觉证据，修改程序，复跑验证，再把修复保存成可检索技能。面对新物体，检索到的旧方法仍得用当前几何重新落地。在其跨机器人实验里，作者分别记录首次写出成功真机程序所用的 token，以及该程序在留出试验中的成功率。一个衡量调试成本，另一个衡量复用质量。[ASPIRE 实验和局限](https://research.nvidia.com/labs/gear/aspire/)
 
+## 工具代理的结构对照
+同样是抓空，Guava 的模型读一次工具返回，Code as Policies 生成的程序可以直接走条件分支，ASPIRE 的编码代理还可以在试验后改写程序。这三种回路的接收方分别是模型、正在运行的程序和下一版程序。图中的 SayCan 是技能选择的早期参照，使用 PaLM；OpenRUA 使用 Claude Code，uni-robot-agent 展示开放模型。同类接口可以由不同模型实现。
+
+### 模型在一次交互中决定什么？
+
+**Astranomy · Agentic** · [作者原文](https://research.nvidia.com/labs/srl/projects/astranomy/)
+
+[![图像、任务 与机器人状态 → Astra 持续会话 可用检查工具 → 末端目标 与执行步数 → 控制器执行](../../diagrams/zh/astranomy-agentic.svg)](../../diagrams/zh/astranomy-agentic.svg)
+
+图中取末端控制配置。它与 Direct 共用相似的动作表达，关键变化是决策会话保留此前尝试，代理还可以按需检查图像或计算几何。
+
+**Guava** · [作者原文](https://guava-harness.github.io/)
+
+[![图像、夹爪状态 与交互历史 → 教师或 Guava-4B → 一个工具名 及其参数 → 感知或操作工具 在环境中执行](../../diagrams/zh/guava.svg)](../../diagrams/zh/guava.svg)
+
+一次对齐只说明工具完成了对齐。模型在下一轮可以读反馈，再决定是否闭合夹爪。教师采集与学生部署使用同一组工具。
+
+**Robo-Harness K1** · [作者原文](https://arxiv.org/abs/2609.29389)
+
+[![图像与任务 → VLM 发起 几何查询 → 标定深度、锚点 与抓取假设 → VLM 据此选择 通用运动 → 机械臂执行](../../diagrams/zh/k1.svg)](../../diagrams/zh/k1.svg)
+
+几何查询本身可以不移动手臂。抓取前，模型可以引用同一个视觉锚点，检查尺度或深度，再决定怎么接近。
+
+**SayCan** · [作者原文](https://say-can.github.io/)
+
+[![指令与已选技能 / 机器人当前状态 → 语言模型 给技能相关性打分 / 价值函数 给可行性打分 → 分数相乘 选最高分技能 → 执行已训练的 技能策略](../../diagrams/zh/saycan.svg)](../../diagrams/zh/saycan.svg)
+
+候选技能先定好。即使语言模型认为“抓罐”最符合任务，当前状态的可行性分数也可以让另一项技能胜出。
+
+### 生成的程序究竟交给谁执行？
+
+**Code as Policies** · [作者原文](https://code-as-policies.github.io/)
+
+[![指令与 API 示例 → 代码语言模型 → Python 策略 循环与条件 → 感知 API 与控制原语](../../diagrams/zh/code-as-policies.svg)](../../diagrams/zh/code-as-policies.svg)
+
+生成程序可以反复读取检测结果，直到满足条件才调用下一步。这样的反馈循环在本地程序内运行，每次判断都可复用已经写好的代码。
+
+**VoxPoser** · [作者原文](https://voxposer.github.io/)
+
+[![指令 → 模型写出 目标与约束代码 / 场景 → 视觉定位 与三维重建 → 合成三维值图 → 运动规划器 求末端轨迹 → 机械臂执行](../../diagrams/zh/voxposer.svg)](../../diagrams/zh/voxposer.svg)
+
+“接近把手”和“远离杯子”可各写成一张图。两图合成后由规划器求动作，场景变化时可以重算几何而复用同一段代码。
+
+**ASPIRE** · [作者原文](https://research.nvidia.com/labs/gear/aspire/)
+
+[![任务与已验证技能 → 编码代理 编写或修订程序 → 执行策略程序 调用机器人 API → 检查多模态记录 复跑验证 → 保存可复用技能](../../diagrams/zh/aspire.svg)](../../diagrams/zh/aspire.svg)
+
+两条回路作用于不同时间。一次失败的视觉和调用记录帮助修改当前程序；通过复测的修复可进入技能库，供以后的任务检索。
+
+**OpenRUA** · [作者原文](https://arxiv.org/abs/2610.02459)
+
+[![任务与 ROS 2 文档 → 终端中的 代码代理 → 读传感器文件 编写控制程序 → 调用原生 ROS 2 接口执行](../../diagrams/zh/openrua.svg)](../../diagrams/zh/openrua.svg)
+
+这里交给代理的是带文档的工作区。采用哪段观察程序、发哪个 ROS 2 命令、怎样组织重试，均由代理在工作区中安排。
+
+**uni-robot-agent** · [作者原文](https://arxiv.org/abs/2611.01560)
+
+[![任务、相机图像 与状态 → 开放权重模型 → 统一工具接口 感知、代码与动作 → 仿真或真机后端](../../diagrams/zh/uni-robot-agent.svg)](../../diagrams/zh/uni-robot-agent.svg)
+
+OpenRUA 从原生 ROS 2 起步，这项工作统一了不同后端的工具协议。论文的无深度实例中，代理用多视角像素、相机参数和自写代码三角定位。
+
 [项目实录 · Piper 与 TERM](term.md)
 
 [中文](../zh/piper.md) · [English](../en/piper.md)

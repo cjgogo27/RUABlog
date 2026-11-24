@@ -15,4 +15,16 @@ figure{margin:24px 0}.still img{width:100%;height:auto;display:block;border-radi
 .home .tablewrap td:first-child{width:29%}
 .textintro{display:block}.textintro .intro{max-width:48rem}
 .navgroup{display:block;margin:15px 0 2px;color:var(--muted);font-weight:600}
+.paper-atlas,.paper-flow{scroll-margin-top:82px}
+.paper-atlas h3{margin:28px 0 6px;font-size:1.18rem;letter-spacing:-.02em}
+.paper-flow{margin:0;padding:19px 0 16px;border-bottom:1px solid var(--line)}
+.paper-flow figcaption{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px}
+.paper-flow figcaption b{font-size:1.04rem;color:var(--ink)}
+.paper-flow figcaption>a{font-size:.82rem}
+.diagram-scroll{overflow-x:auto;margin:8px 0 0}
+.diagram-scroll a,.diagram-scroll img{display:block}
+.diagram-scroll a{min-width:670px;cursor:zoom-in}
+.diagram-scroll img{width:100%;height:auto}
+.paper-flow p{font-size:.94rem;line-height:1.65;margin:5px 0;color:var(--muted)}
+.atlas-links{font-size:.94rem}
 .architecture{margin:24px 0;scroll-margin-top:85px}.architecture img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;cursor:zoom-in}.architecture figcaption{margin:7px 0;color:var(--muted)}.subchapter{border-left:2px solid var(--line);margin-left:15px;padding-left:5px}

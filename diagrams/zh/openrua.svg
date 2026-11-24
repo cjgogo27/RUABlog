@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="99" viewBox="0 0 860 99" role="img" aria-labelledby="title desc">
+<title id="title">OpenRUA</title><desc id="desc">这里交给代理的是带文档的工作区。采用哪段观察程序、发哪个 ROS 2 命令、怎样组织重试，均由代理在工作区中安排。</desc>
+<style>text{font:15px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#17343b;text-anchor:middle}
+    .feedback{font-size:13px;fill:#14645c}.wire,.back{fill:none;stroke:#627c81;stroke-width:1.55;stroke-linejoin:round}
+    .back{stroke:#287b71}.focus{font-weight:600}</style><defs>
+<marker id="out" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#627c81"/></marker>
+<marker id="in" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#287b71"/></marker>
+</defs><rect width="100%" height="100%" fill="white"/>
+<path class="wire" d="M207.5 31.5 H219.5 V31.5 H228.5" marker-end="url(#out)"/>
+<path class="wire" d="M420.0 31.5 H432.0 V31.5 H441.0" marker-end="url(#out)"/>
+<path class="wire" d="M632.5 31.5 H644.5 V31.5 H653.5" marker-end="url(#out)"/>
+<path class="back" d="M750.75 55 V81 H325.75 V58" marker-end="url(#in)"/>
+<text class="feedback" x="538.25" y="76">读取新传感器文件和终端结果</text>
+<rect x="19.0" y="8" width="188.5" height="47" rx="4" fill="#ffffff" stroke="#a8bcba"/>
+<text class="node" x="113.25" y="36.5">任务与 ROS 2 文档</text>
+<rect x="231.5" y="8" width="188.5" height="47" rx="4" fill="#eaf5f2" stroke="#26766d"/>
+<text class="focus" x="325.75" y="28.0">终端中的</text>
+<text class="focus" x="325.75" y="45.0">代码代理</text>
+<rect x="444.0" y="8" width="188.5" height="47" rx="4" fill="#ffffff" stroke="#a8bcba"/>
+<text class="node" x="538.25" y="28.0">读传感器文件</text>
+<text class="node" x="538.25" y="45.0">编写控制程序</text>
+<rect x="656.5" y="8" width="188.5" height="47" rx="4" fill="#ffffff" stroke="#a8bcba"/>
+<text class="node" x="750.75" y="28.0">调用原生 ROS 2</text>
+<text class="node" x="750.75" y="45.0">接口执行</text>
+</svg>

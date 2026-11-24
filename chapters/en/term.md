@@ -19,6 +19,13 @@ Of the 117 additional native successes on Piper, 96 came from the seven demonstr
 **A Piper debugging example.** On a red-object approach, the path changed its tilt while the fingertip offset was still computed at the previous orientation. Descent drifted sideways by roughly 5.4 mm. Asking the model to identify the object again would not correct it. The requested target, chosen orientation and measured fingertip path together locate the error inside the tool. The same logic applies to program evaluation: one generated loop can represent ten physical attempts.
 
 ## If a tool rescues the grasp, what should the student imitate?
+
+**Piper · TERM**
+
+[![Student issues a tool request → Tool executes and logs corrections → Verify result and align labels → Fine-tune on retained traces → Evaluate student with original tools](../../diagrams/en/piper-term.svg)](../../diagrams/en/piper-term.svg)
+
+This is the cross-episode training and evaluation path. Logging the request, executed action and later observation separately makes it possible to test what persists in the student weights.
+
 ASPIRE stores validated program repairs. TERM also asks whether experience from a repaired executor transfers to a student. Suppose the student requests a grasp at the old location and the executor refreshes localization and corrects the path. Log the student’s request, the corrected execution and the new observation separately. Labelling the old image with the executor’s corrected coordinates would use information from the future.
 
 TERM first fixes the student while varying the tools, then performs rejection-sampling fine-tuning (RFT) on verified student traces with reconstructable targets. Restoring the original executor at test time checks what survived in the weights. In the revision’s verifier comparison table, the frozen SFT student goes from 28.89% to 41.11% when changing executors. Students trained on two sources of traces and both tested on the original executor score 39.33% and 46.44%. These are manuscript V-SR comparisons, distinct from native success above. The author confirms the approach has been validated; the November 17 archive still labels these verifier figures constructed and does not include complete per-scene replay. The useful experimental detail is which component each contrast holds fixed.

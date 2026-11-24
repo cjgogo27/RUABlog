@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="136" viewBox="0 0 860 136" role="img" aria-labelledby="title desc">
+<title id="title">ASPIRE</title><desc id="desc">The two returns operate at different times. A trace can repair the current program. A validated repair can enter the skill library for retrieval on a later task.</desc>
+<style>text{font:15px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#17343b;text-anchor:middle}
+    .feedback{font-size:13px;fill:#14645c}.wire,.back{fill:none;stroke:#627c81;stroke-width:1.55;stroke-linejoin:round}
+    .back{stroke:#287b71}.focus{font-weight:600}</style><defs>
+<marker id="out" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#627c81"/></marker>
+<marker id="in" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#287b71"/></marker>
+</defs><rect width="100%" height="100%" fill="white"/>
+<path class="wire" d="M165.0 31.5 H177.0 V31.5 H186.0" marker-end="url(#out)"/>
+<path class="wire" d="M335.0 31.5 H347.0 V31.5 H356.0" marker-end="url(#out)"/>
+<path class="wire" d="M505.0 31.5 H517.0 V31.5 H526.0" marker-end="url(#out)"/>
+<path class="wire" d="M675.0 31.5 H687.0 V31.5 H696.0" marker-end="url(#out)"/>
+<path class="back" d="M602.0 55 V81 H262.0 V58" marker-end="url(#in)"/>
+<text class="feedback" x="432.0" y="76">Repair using the trace</text>
+<path class="back" d="M772.0 55 V118 H92.0 V58" marker-end="url(#in)"/>
+<text class="feedback" x="432.0" y="113">Retrieve validated skills for future tasks</text>
+<rect x="19.0" y="8" width="146.0" height="47" rx="4" fill="#ffffff" stroke="#a8bcba"/>
+<text class="node" x="92.0" y="28.0">Task and</text>
+<text class="node" x="92.0" y="45.0">retrieved skills</text>
+<rect x="189.0" y="8" width="146.0" height="47" rx="4" fill="#eaf5f2" stroke="#26766d"/>
+<text class="focus" x="262.0" y="28.0">Coding agent</text>
+<text class="focus" x="262.0" y="45.0">writes or repairs</text>
+<rect x="359.0" y="8" width="146.0" height="47" rx="4" fill="#ffffff" stroke="#a8bcba"/>
+<text class="node" x="432.0" y="28.0">Run policy code</text>
+<text class="node" x="432.0" y="45.0">via robot APIs</text>
+<rect x="529.0" y="8" width="146.0" height="47" rx="4" fill="#ffffff" stroke="#a8bcba"/>
+<text class="node" x="602.0" y="28.0">Inspect traces</text>
+<text class="node" x="602.0" y="45.0">and validate fixes</text>
+<rect x="699.0" y="8" width="146.0" height="47" rx="4" fill="#eaf5f2" stroke="#26766d"/>
+<text class="focus" x="772.0" y="28.0">Save validated</text>
+<text class="focus" x="772.0" y="45.0">skill</text>
+</svg>
