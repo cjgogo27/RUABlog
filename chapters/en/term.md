@@ -1,89 +1,24 @@
-# Does a tool repair stay in code or transfer to the weights?
+# Where does robot experience end up?
 
-In one ordering scene the objects satisfied the prescribed order through the hold window, yet the apple had fallen below the table. TERM therefore records three different decisions: native task success, acceptance by independent physical checks and eligibility as a training example.
-## Hold one component fixed and change the other
-First freeze the distilled student. A generator uses calls and actual returns to revise the executor's target resolution, observation requests or release order; scoring stays outside its writable interface. Then freeze the tools and apply rejection-sampling fine-tuning (RFT) on selected student trajectories. Restoring the original executor H₀ at evaluation tests what follows the weights. The student's emitted action and any internal executor correction must be stored separately. Otherwise a target could teach the student to imitate a decision it never made.
+A missed grasp can help three timescales. Send the new image to the model and it can retry now. Store a validated fix as a skill and another task can retrieve it. Pair the observation with the next appropriate action and change the student’s weights. All three can improve behaviour, but leave different artifacts behind.
+## How a recovery becomes a training example
+In Guava the teacher first attempts a normal task. The system saves an intermediate checkpoint, perturbs the object or grasp, then lets the teacher continue from the new image and actual return. Training conditions on instruction, images and history and supervises the next teacher call. The deployed student uses the same interface. On eight unseen tasks, omitting perturbation trajectories gave 77.1% versus 90.8% with them. On seven seen tasks the corresponding values were 81.9% and 82.9%. That is a reason to measure familiar and changed conditions separately when evaluating recovery data. [Guava training and ablation](https://guava-harness.github.io/)
 
+Our Piper pipeline also used tool interactions to train Qwen3.5-4B. The export comprised 667 base trajectories and 374 recovery branches, or 1,041 records. We froze the visual encoder and aligner and fine-tuned the language component for three epochs. Video metadata covers 21.48 simulated execution hours over 759 records; imputing the rest by task and record type gives about 28.9 hours. A branch inherits its parent conversation, so only its new segment contributes to duration. The export included 27 records marked rejected in review; those records entered this checkpoint.
+## Which distillation results can be read side by side?
+| Each project’s own fifteen-task simulation | Base Qwen3.5-4B | Distilled student | Respective teacher |
+|---|---:|---:|---:|
+| Guava, reported, 450 scenes | 22.2% | 87.1% | GPT-5.4, 90.4% |
+| Piper, TERM native criterion, 450 scenes | 7.33% (33) | 33.33% (150) | GPT-6 Astra, 69.11% (311) |
 
-> How to read the evidence Values follow the 17 November TERM revision. The author subsequently confirmed the approach had been validated and approved reporting. The archive identifies native Base, SFT and Astra counts as supplied and the verifier, ablation, cost, shift and expanded hardware tables below as constructed comparisons. The archive does not include a complete per-trial replay for these latter tables.
+Each row supports a **within-system comparison**. Guava gained 64.9 points and approached its teacher. Piper gained 26.00 points and remained 35.78 points behind its teacher. The robots, teachers, tool adaptations and training data differ. Even the starting scores differ substantially, so the difference between the two students cannot be assigned to a training method. In a separate three-task timing study, Guava reported 42.10 versus 5.64 seconds of cumulative model requests per episode for GPT-5.4 and local Guava-4B. Robot motion is outside that timing. [Guava results and latency definitions](https://guava-harness.github.io/)
 
+Of the 117 additional native successes on Piper, 96 came from the seven demonstration-source tasks, and 21 from the other eight. Basket pushing rose from 5/30 to 28/30, can placement from 0/30 to 14/30, and setting the table stayed at 0/30. The total captures transfer from demonstration; the distribution tells us which skills to investigate next.
+## If a tool rescues the grasp, what should the student imitate?
+ASPIRE stores validated program repairs. TERM also asks whether experience from a repaired executor transfers to a student. Suppose the student requests a grasp at the old location and the executor refreshes localization and corrects the path. Log the student’s request, the corrected execution and the new observation separately. Labelling the old image with the executor’s corrected coordinates would use information from the future.
 
-**TERM comparison on 450 simulation scenes**
+TERM first fixes the student while varying the tools, then performs rejection-sampling fine-tuning (RFT) on verified student traces with reconstructable targets. Restoring the original executor at test time checks what survived in the weights. In the revision’s verifier comparison table, the frozen SFT student goes from 28.89% to 41.11% when changing executors. Students trained on two sources of traces and both tested on the original executor score 39.33% and 46.44%. These are manuscript V-SR comparisons, distinct from native success above. The author confirms the approach has been validated; the November 17 archive still labels these verifier figures constructed and does not include complete per-scene replay. The useful experimental detail is which component each contrast holds fixed.
 
-| Condition | N-SR (/450) | V-SR (/450) | V-SR (%) |
-| --- | --- | --- | --- |
-| Base | 33 | 29 | 6.44 |
-| SFT | 150 | 130 | 28.89 |
-| Tools | 204 | 185 | 41.11 |
-| RFT-stage1 | 231 | 213 | 47.33 |
-| RFT-H0 | 195 | 177 | 39.33 |
-| RFT-Evo | 227 | 209 | 46.44 |
-| Full | 257 | 239 | 53.11 |
-
-Moving from SFT to Tools changes the executor with the student fixed, taking V-SR from 28.89% to 41.11%. RFT-H0 and RFT-Evo both run on H₀ at test time, but learned from different collection executors, scoring 39.33% and 46.44%. Deploying that same latter student with the improved tools gives 53.11%. These contrasts answer different questions. The verifier requires native success, the goal relation, workspace constraints, event order and a hold interval. Unknown outcomes count as non-passes.
-
-
-**Manuscript verifier table · percent, 30 scenes per cell**
-
-| Task | Base | SFT | Tools | RFT-H0 | RFT-Evo | Full |
-| --- | --- | --- | --- | --- | --- | --- |
-| Pick up carrot | 0.00 | 6.67 | 20.00 | 16.67 | 26.67 | 33.33 |
-| Tomato near potato | 0.00 | 16.67 | 30.00 | 26.67 | 36.67 | 46.67 |
-| Lemon in bin | 0.00 | 3.33 | 13.33 | 10.00 | 16.67 | 26.67 |
-| Push pot | 10.00 | 53.33 | 66.67 | 63.33 | 70.00 | 76.67 |
-| Reverse cube stack | 0.00 | 0.00 | 16.67 | 13.33 | 23.33 | 33.33 |
-| Reverse apple/juice order | 70.00 | 53.33 | 66.67 | 63.33 | 70.00 | 73.33 |
-| Bin and tray | 0.00 | 0.00 | 6.67 | 6.67 | 13.33 | 23.33 |
-| Set table | 0.00 | 0.00 | 3.33 | 3.33 | 10.00 | 16.67 |
-| Can in bin | 0.00 | 40.00 | 56.67 | 53.33 | 60.00 | 73.33 |
-| Apple/juice order | 0.00 | 50.00 | 60.00 | 60.00 | 66.67 | 73.33 |
-| Remove cube from tray | 0.00 | 6.67 | 26.67 | 23.33 | 40.00 | 43.33 |
-| Push basket | 16.67 | 90.00 | 90.00 | 93.33 | 93.33 | 93.33 |
-| Close drawer | 0.00 | 10.00 | 26.67 | 23.33 | 33.33 | 40.00 |
-| Shell game | 0.00 | 40.00 | 56.67 | 56.67 | 63.33 | 66.67 |
-| Red objects in basket | 0.00 | 63.33 | 76.67 | 76.67 | 73.33 | 76.67 |
-
-## Which removal changes the comparison most?
-
-**Manuscript ablations · 450 simulation scenes per condition**
-
-| Condition | V-SR (%) | N-SR (%) |
-| --- | --- | --- |
-| Full | 53.11 | 57.11 |
-| Binary feedback | 48.22 | 52.22 |
-| No intermediate events | 49.11 | 53.56 |
-| No temporal filter | 47.56 | 53.11 |
-| Terminal-only filter | 44.89 | 50.67 |
-| No RFT | 41.11 | 45.33 |
-| One RFT round | 50.44 | 54.44 |
-
-Among the feedback and filtering ablations, checking only the endpoint scored lowest, 8.22 points below Full. The apple that fell off the table illustrates why two traces with the same apparent endpoint can have very different processes. One counterexample cannot identify which failure class accounts for that entire contrast.
-
-
-**Manuscript distribution shifts · native successes out of 120**
-
-| Shift | SFT | Tools | RFT-Evo | Full |
-| --- | --- | --- | --- | --- |
-| New layout | 40 | 54 | 58 | 68 |
-| New object | 38 | 50 | 54 | 64 |
-| Novel composition | 34 | 46 | 49 | 61 |
-| Long horizon | 28 | 39 | 43 | 55 |
-
-The shift table uses native task success. On 120 scenes each, Full solved 68 with new layouts and 55 on long horizons. Layout transfer alone would give an optimistic picture of sustained execution. RFT partitions one fixed pool of 160 records across updates, which leaves repeated online recollection as a separate question.
-## Count cost and physical layouts explicitly
-
-**Expanded hardware table in the manuscript · 20 trials per task and condition**
-
-| Task | SFT | Tools | RFT-H0 | RFT-Evo | Full |
-| --- | --- | --- | --- | --- | --- |
-| Can in bin | 6 | 9 | 6 | 9 | 10 |
-| Shell game | 4 | 6 | 5 | 6 | 8 |
-| Apple/juice order | 6 | 9 | 9 | 10 | 10 |
-| Reverse cube stack | 3 | 5 | 5 | 8 | 7 |
-| Total /80 | 19 | 29 | 25 | 33 | 35 |
-
-The physical table uses twenty layouts per task per condition. Reverse stacking went from 8/20 with RFT-Evo to 7/20 with Full despite the higher combined total. The manuscript's Holm-adjusted paired comparison of Full against SFT on hardware gives 0.068. With small samples, the size and uncertainty of the contrast both matter.
-
-For collection the initial student gets 1,200 attempts under each executor. Original and improved tools yield 400 and 520 eligible records, consuming 65 and 68 GPU hours, or 9.75 and 7.85 GPU minutes per usable record. SFT and Full decision latencies are close at 810 and 820 ms. Episode time falls from 160 to 134 seconds as mean actions drop from 17.3 to 14.1. This suggests checking saved actions as an explanation. Search and training are outside this deployment and collection budget.
+One concrete lesson from our training pipeline is to inspect what the loader actually returns. The archived JSON contained tool calls, but one loader version failed to pass their content into the supervised field. We aligned assistant text, images, arguments and loss masks before interpreting the student as learning which tool to call after an observation.
 
 [中文](../zh/term.md) · [English](../en/term.md)

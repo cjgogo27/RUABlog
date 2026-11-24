@@ -1,14 +1,11 @@
-# RUA Field Notes · 机器人操作实验手册
+# RUA Field Notes · 机器人操作路线导读
 
-在 Piper 上，学生从每 30 次推篮成功 5 次提高到 28 次；同一次蒸馏，反向排序却从 23 次降到 19 次。这本短教程从这两个方向相反的结果出发，沿着一次工具调用，追到训练数据、指尖运动和最后的评分。
+桌上放着一只罐子和一个空箱。要把罐子放进去，模型可以给出夹爪的目标位置，可以调用一次抓取工具，也可以把最后几厘米交给专门练过抓取的策略。这几种做法拍成视频很像。要看出区别，可以沿着同一个任务找三件东西：模型发出去的是什么，夹爪和模型各自看得到什么反馈，下一次尝试会改动什么。
 
 [中文网站](https://cjgogo27.github.io/RUABlog/) · [English site](https://cjgogo27.github.io/RUABlog/index-en.html)
 
-| 章节 | 中文 | English |
-|---|---|---|
-| 动作接口 | [动作接口](chapters/zh/routes.md) | [Action interfaces](chapters/en/routes.md) |
-| Piper 蒸馏 | [Piper 蒸馏](chapters/zh/piper.md) | [Piper distillation](chapters/en/piper.md) |
-| TERM 实验 | [TERM 实验](chapters/zh/term.md) | [TERM experiments](chapters/en/term.md) |
-| 近作选读 | [近作选读](chapters/zh/survey.md) | [Recent work](chapters/en/survey.md) |
-
-离线阅读可直接打开 `index.html`。
+1. [末端动作与 VLA](chapters/zh/routes.md) · [EEF actions and VLAs](chapters/en/routes.md)
+2. [技能、工具与代码](chapters/zh/piper.md) · [Skills, tools and code](chapters/en/piper.md)
+3. [分层执行与干预](chapters/zh/hierarchy.md) · [Hierarchy and intervention](chapters/en/hierarchy.md)
+4. [示范、修复与蒸馏](chapters/zh/term.md) · [Learning from execution](chapters/en/term.md)
+5. [近两个月的工作](chapters/zh/survey.md) · [Two months of RUA](chapters/en/survey.md)

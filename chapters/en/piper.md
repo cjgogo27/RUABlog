@@ -1,54 +1,21 @@
-# Teaching a 4B student to choose tools
+# From choosing a skill to writing a program
 
-With the original executor H₀ fixed, we can ask where the student started, what distillation added and how much of the teacher's capability remains out of reach. All three bars use the TERM revision's native task criterion (N-SR), over fifteen tasks with thirty scenes each.
-## Three models on the same endpoint
+The gripper has closed; the can is still on the table. If the last call returned only “done”, the model may now request a move to the bin. Tool design starts with two questions: who handles localization and approach, and what evidence can the tool return about the grasp?
+## Which skill is feasible here?
+**SayCan** scores each candidate skill twice. A language model estimates whether the skill fits the instruction, and a learned value function estimates whether it can succeed from the current state. The system combines the scores, executes a skill and selects again. Fetching the can might be semantically appropriate even when the bin blocks access. The authors report that PaLM-SayCan chose the correct skill sequence 84% of the time and executed tasks successfully 74% of the time. The ten-point separation is a reason to measure planning and physical execution separately. [SayCan method and results](https://say-can.github.io/)
+## Tool granularity sets the observation schedule
+**Guava** gives teacher and student a common set of perception and manipulation tools. A model decision selects a tool and arguments, then receives an updated image, gripper state or execution feedback. For the can, a candidate sequence is “locate → align → grasp → check → transport”. A miss at grasp time invalidates the rest of that sequence.
 
-| H₀ | N-SR |
-|---|---:|
-| Qwen Base | 33/450 · 7.33% |
-| Qwen SFT | 150/450 · 33.33% |
-| GPT-6 Astra | 311/450 · 69.11% |
+In the authors’ harness study on seven tasks with fifteen trials each, GPT-5.4 achieved 56.2% with images alone, 77.1% with images plus gripper state, 88.6% with the full single-action replanning interface, and 82.9% with multi-action replanning. The first comparison tests missing state; the second tests the feedback schedule. A real rollout makes the distinction tangible. The can contacted the bin rim and the controller interrupted motion. The agent used that return to move sideways before it resumed placement. [Guava ablations and recovery](https://guava-harness.github.io/)
 
-The student gained **117 completions, or 26.00 percentage points**. It still trailed the teacher by **161 completions, or 35.78 points**, under the same scene and execution budgets. The teacher comparison uses native task success. The manuscript supplies its aggregate, so the per-task table shows the two student checkpoints.
+**K1 moves more work into perception tools.** The agent queries calibrated depth, persistent anchors, measurements and grasp hypotheses before choosing generic motions. On matched LIBERO-PRO tasks, the same Astra scored 61.1% with an RGB harness and 88.9% with K1. This varies a package of perception capabilities. It suggests a narrower Piper experiment: fix the model, scenes and retry budget, vary target binding alone and count how often a neighbouring object is grasped. [Robo-Harness K1](https://arxiv.org/abs/2609.29389)
+## When the model returns code
+Consider a missed grasp as a teaching example. A tool agent might issue three successive calls: locate the can, grasp it, locate it again. The third call is generated only after the miss. A code agent might have already written a branch that changes the viewpoint and reruns localization if the can stays on the table after lifting. Both use feedback. One calls the model at the point of failure; the other runs a previously generated condition there. Comparing their response times requires timing both model waits and the robot movements needed to check the condition.
 
+**Code as Policies** translates an instruction into a program that calls perception and control APIs. A program handling several cans can loop, branch and compute geometry locally. **VoxPoser** uses code for a different intermediate product. With visual grounding, the code builds 3D value maps for goals and constraints such as approaching a handle while avoiding a cup. A motion planner searches for an end-effector trajectory using those maps. Both generate code; control flow in one case and a spatial objective in the other are what the executor actually receives. [Code as Policies](https://code-as-policies.github.io/) · [VoxPoser](https://voxposer.github.io/)
 
-**Native successes out of 30 per cell**
+**ASPIRE** adds a learning loop around the program. It reads a failed call, the return and visual evidence, edits the program, validates it on new executions and stores a retrievable skill. A later robot must still bind that skill to the geometry in front of it. In cross-embodiment experiments, the authors report both the tokens needed to reach a first working physical program and that program’s held-out success. These measure debugging cost and reuse quality, respectively. [ASPIRE experiments and limitations](https://research.nvidia.com/labs/gear/aspire/)
 
-| Task | Qwen Base | Qwen SFT |
-| --- | --- | --- |
-| Pick up carrot | 0 | 3 |
-| Tomato near potato | 0 | 6 |
-| Lemon in bin | 0 | 1 |
-| Push pot | 4 | 18 |
-| Reverse cube stack | 0 | 1 |
-| Reverse apple/juice order | 23 | 19 |
-| Bin and tray | 0 | 0 |
-| Set table | 0 | 0 |
-| Can in bin | 0 | 14 |
-| Apple/juice order | 0 | 17 |
-| Remove cube from tray | 0 | 3 |
-| Push basket | 5 | 28 |
-| Close drawer | 0 | 4 |
-| Shell game | 1 | 14 |
-| Red objects in basket | 0 | 22 |
-
-The seven demonstration-source tasks rose from 6/210 to 102/210. The other eight went from 27/240 to 48/240. Of 117 additional successes, 96 came from source tasks. Basket pushing and collecting red objects improved substantially. Reverse ordering lost four scenes. Bin and tray and setting the table remained at zero. Those last three tasks would be my first choices for failure replay to distinguish missing skills, misunderstood goals and execution errors.
-## What was supervised in 1,041 records?
-
-- **Base** · Initial image → Teacher call → Actual feedback
-- **Branch** · Parent checkpoint → Perturbation → New decision
-- **Training** · Align images → Supervise replies → Qwen3.5-4B
-
-We fine-tuned the language component of Qwen3.5-4B for three epochs on 667 base trajectories and 374 recovery branches, freezing the vision encoder and aligner. Base runs begin at the task reset. A branch inherits visible history and starts from a perturbed parent checkpoint. Prefixes may therefore recur. Video metadata covers 759 records and 21.48 hours. Imputing the remaining 282 by task and trajectory kind gives about 28.9 simulated execution hours, counting only the new segment of each branch.
-
-A loader once kept the raw tool calls in the archive but failed to expose the expected fields to training. We preserved the original assistant text and checked the actual loss-bearing content and image order. The frozen export included 27 records marked rejected in review. This checkpoint measures training on that export. A cleaned-data comparison would require another run.
-
-The weights updated here belong to the open student. A closed GPT service saw the task images and generated teacher calls. A robot image in a request tells us nothing about whether its provider used it for weight updates. The recent PEAR study in the survey illustrates an alternative training signal supplied by the simulator.
-## Three failures traced back to execution
-**How far is the finger from the object?** Four contact points on a coarse finger box were roughly 19–26 mm from the original CAD. Replacing the box with a CAD convex hull removed a source of spurious contact, while a real fingertip can still collide with a cup wall. For red-object grasping, we also traced a roughly 5.4 mm lateral drift to a fingertip offset computed before the approach angle changed. A correct tool name cannot compensate for a stale transform.
-
-**Why does the juice slip after lifting?** The original asset compiled to about 0.138 g. Increasing its mass exposed cases that reached their target pose but lost the load on the way up. For collection we sampled 70–140 g for container and contents and inherited the parent's mass on recovery branches. This is a simulation assumption that can be checked by weighing the real object.
-
-**Is the rightmost cup the one we checked earlier?** Moving one cup changes the ordering. Two spatial descriptions can also yield nearly identical segmentation masks. Remembering previously inspected locations helps, although another observation costs a decision. In one recorded scene the base model used all 25 calls while the cube remained on the table. The student lifted it about 14.1 cm after 14 calls. That replay explains a particular success. The aggregate for the student is 14/30.
+**A Piper debugging example.** On a red-object approach, the path changed its tilt while the fingertip offset was still computed at the previous orientation. Descent drifted sideways by roughly 5.4 mm. Asking the model to identify the object again would not correct it. The requested target, chosen orientation and measured fingertip path together locate the error inside the tool. The same logic applies to program evaluation: one generated loop can represent ten physical attempts.
 
 [中文](../zh/piper.md) · [English](../en/piper.md)

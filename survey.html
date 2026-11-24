@@ -1,13 +1,44 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>近两个月，机器人使用智能体在改什么？ · RUA Field Notes</title><link rel="stylesheet" href="assets/guide.css"><link rel="alternate" hreflang="en" href="survey-en.html"><body><a class="skip" href="#main">跳至正文</a><header><div><a class="brand" href="index.html"><span>R</span> RUA Field Notes</a><nav><a class="langs" id="lang" href="survey-en.html" lang="en">English</a><a href="https://github.com/cjgogo27/RUABlog">GitHub</a></nav></div></header><div class="layout "><aside class="left"><small>机器人操作实验手册</small><nav><a href="index.html">阅读指南</a><a href="routes.html">动作接口</a><a href="piper.html">Piper 蒸馏</a><a href="term.html">TERM 实验</a><a href="survey.html" aria-current="page">近作选读</a></nav></aside><details class="mobilemenu"><summary>章节目录</summary><nav><a href="index.html">阅读指南</a><a href="routes.html">动作接口</a><a href="piper.html">Piper 蒸馏</a><a href="term.html">TERM 实验</a><a href="survey.html" aria-current="page">近作选读</a></nav></details><main id="main"><p class="eyebrow">近作选读</p><h1>近两个月，机器人使用智能体在改什么？</h1><p>选读窗口为 2026 年 9 月 24 日至 11 月 24 日，按首发或作者文章日期收录。关注四个能移植到 Piper 的问题：模型看到哪种几何，记住什么，预算怎么计，执行经验最后更新了谁。下面每个数字只在其原实验内解释。</p>
-<h2 id="s1">把几何交给模型，还是交给接口？</h2>
-<p><strong>9 月 24 日 · Robo-Harness K1。</strong> 在匹配的 LIBERO-PRO 任务上，同一个 Astra 使用 RGB 接口为 61.1%，接入深度、视觉锚点和几何查询后为 88.9%。最值得借鉴的对照是固定模型后换接口。对我们的杯子游戏，可以先固定学生和预算，只替换实例绑定方法，记录重复检查杯子的比例。<a href="https://arxiv.org/abs/2609.29389">作者论文</a></p>
-<p><strong>10 月 · Astranomy 研究博客。</strong> 直接策略单次推理平均 18.56 秒。对已经开始移动的物体，回复送达时的场景可能不同。作者同时比较直接、代理与审阅三种角色，详见第一章。这篇文章值得读的还有失败录像，可逐次区分瞄准、闭合和搬运。<a href="https://research.nvidia.com/labs/srl/projects/astranomy/">作者博客与回放</a></p>
-<h2 id="s2">让代理写代码，评测预算怎么算？</h2>
-<p><strong>10 月 1 日 · OpenRUA。</strong> Claude Code 配合 Opus 5，通过机器人原生接口生成控制程序，作者在 CaP-Bench 和 LIBERO-PRO 分别报告 99.0% 和 87.0%。这提供了一个明确对照：同样要把红罐送进箱子，工具策略挑选预定义动作，代码策略还可以决定循环与重试。因此要同时记录生成程序发出的底层调用。<a href="https://arxiv.org/abs/2610.02459">项目论文</a></p>
-<p><strong>11 月 2 日 · Behind the RoboDojo Boom。</strong> OpenRUA Team 从公开时间线重新计步；在其分析的 RoboDawn 210 条轨迹里，99 条成功中的 97 条出现在原控制步上限之后。即使机器人、初态和视频完全一样，换一个停止条件也会改变结论。这也是本文逐表保留尝试数和判据的原因。<a href="https://openrua.ai/revisiting-rua">作者复核博客</a></p>
-<h2 id="s3">开源学生可以学到哪一层？</h2>
-<p><strong>11 月 1 日论文，11 月 3 日技术博客 · uni-robot-agent。</strong> 无特权输入下，Qwen3.8-Flash-Next 得到 31.39 的 RoboDojo Score，文中对照的 Astra–RoboProbe 是 28.97。这里是基准综合分，两者的执行接口也不同。对本地 4B 学生，更有启发的是统一工具和反馈后，可以继续收集训练样本，并把接口升级与换模型分别测量。<a href="https://arxiv.org/abs/2611.01560">论文</a> · <a href="https://openrua.ai/uni-robot-agent">作者博客</a></p>
-<p><strong>11 月 14 日 · PEAR。</strong> 这个项目在仿真中用任务奖励训练 27B 开源推理模型，直接给出机械臂下一步动作。作者报告 LIBERO 从 1.6% 到 74.4%，真机双臂试验从 0% 到 60%。它回答了“没有教师动作标签能不能训练”的问题，也把我们的下一个对照说得更清楚：同样的仿真预算，工具文本示范和末端动作奖励各适合哪些任务？<a href="https://mit-han-lab.github.io/pear-blog/">作者实验博客</a> · <a href="https://mit-han-lab.github.io/pear-blog/paper.pdf">技术报告</a></p>
-<h2 id="s4">三种值得带回实验台的比较</h2>
-<p>Guava 把知识存进学生权重；ASPIRE 还会把经执行验证的修复存成可检索的技能。在其真实魔方案例中，技能积累后每个已完成转面消耗的时间和 token 下降，统计包含失败和恢复。ENPIRE 则把重置、评估与改进也纳入系统。复用代码、更新权重和多给一次重试，都可能救回同一场失败，工程代价截然不同。<a href="https://guava-harness.github.io/">Guava</a> · <a href="https://research.nvidia.com/labs/gear/aspire/">ASPIRE 技能与效率</a> · <a href="https://research.nvidia.com/labs/gear/enpire/">ENPIRE</a></p>
-<p>如果再做一轮 Piper，我会先固定模型比较感知接口，再固定工具比较学生，最后让审阅者在相同扰动时刻选择是否干预。把每次恢复用了多少时间、多少动作，与救回了哪种失败一起公布，读者才能判断一个更高的总分是否值得在自己的机器人上复现。</p><div class="pager"><a href="term.html">TERM 实验</a></div></main><aside class="right"><small>本页目录</small><a href="#s1">把几何交给模型，还是交给接口？</a><a href="#s2">让代理写代码，评测预算怎么算？</a><a href="#s3">开源学生可以学到哪一层？</a><a href="#s4">三种值得带回实验台的比较</a></aside></div><footer>RUA Field Notes · 杨晨杰 · 2026.11.24 <a href="https://cionhuang.github.io/A_Brief_Tutorial_of_Humanoid_Robot/">教程版式参考</a></footer><script src="assets/guide.js"></script></body></html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>近两个月的 RUA 论文怎么读 · RUA Field Notes</title><link rel="stylesheet" href="assets/guide.css"><link rel="alternate" hreflang="en" href="survey-en.html"></head><body><a class="skip" href="#main">跳至正文</a><header><div><a class="brand" href="index.html"><span>R</span> RUA Field Notes</a><nav><a class="langs" id="lang" href="survey-en.html">English</a><a href="https://github.com/cjgogo27/RUABlog">GitHub</a></nav></div></header><div class="layout "><aside class="left"><small>机器人操作路线导读</small><nav><a href="index.html">导读</a><a href="routes.html">末端动作与 VLA</a><a href="piper.html">技能、工具与代码</a><a href="hierarchy.html">分层执行与干预</a><a href="term.html">示范、修复与蒸馏</a><a href="survey.html" aria-current="page">近两个月的工作</a></nav></aside><details class="mobilemenu"><summary>章节目录</summary><nav><a href="index.html">导读</a><a href="routes.html">末端动作与 VLA</a><a href="piper.html">技能、工具与代码</a><a href="hierarchy.html">分层执行与干预</a><a href="term.html">示范、修复与蒸馏</a><a href="survey.html" aria-current="page">近两个月的工作</a></nav></details><main id="main"><p class="eyebrow">近两个月的工作</p><h1>近两个月的 RUA 论文怎么读</h1><p>这里选的是 2026 年 9 月 24 日到 11 月 24 日公开的项目和作者博客。可以把它们排成三组小实验：给模型更好的几何信息、给执行器一次更及时的观察、给学生不同的学习信号。同一篇工作有时跨过几组。</p>
+<h2 id="s1">感知接口变了，模型还一样吗？</h2>
+<p><strong>9 月 24 日，Robo-Harness K1。</strong> 除了同一 Astra 的 RGB／K1 对照，作者还训练了一个 9B 学生。107 条教师轨迹后，新初态准确率为 44.2%，留出任务条件为 13.9%；同文 OpenVLA 对照分别为 30.2% 和 0%。与 Piper 一样，换初始摆放和换任务条件是两件难度不同的事。这里还换了模型与训练方法，不能把 44.2% 对 30.2% 全归给几何输入。<a href="https://arxiv.org/abs/2609.29389">K1 论文</a></p>
+<p><strong>10 月，Astranomy。</strong> 这一研究博客既给出三种角色的结果，也公开失败回放。读定位失败时，要追到第一处偏差：错误物体、夹爪闭合方向，还是转运中滑脱？作者给出的直接策略平均单次推理 18.56 秒，适合和视频一起看；如果目标在此期间已移动，模型给出的几何解可能在旧图上完全正确。<a href="https://research.nvidia.com/labs/srl/projects/astranomy/">Astranomy 作者博客</a></p>
+<h2 id="s2">代码多试了多少次？观察晚了多少步？</h2>
+<p><strong>10 月 1 日，OpenRUA。</strong> 用 Claude Code / Opus 5 从机器人原生接口组织程序，作者在 CaP-Bench 和 LIBERO-PRO 报告 99.0%、87.0%。<strong>11 月 2 日，Behind the RoboDojo Boom</strong> 从另一面解释为什么代码代理尤其需要记账：作者复核另一套系统 RoboDawn 的 210 条公开轨迹，99 条成功里有 97 条在原控制步上限后才发生。这是不同工作的两项结果。读前者可以学接口，读后者可以学怎样审核“跑完了”的含义。<a href="https://arxiv.org/abs/2610.02459">OpenRUA 论文</a> · <a href="https://openrua.ai/revisiting-rua">OpenRUA Team 评测复核博客</a></p>
+<p><strong>10 月 20 日，PACT-VLA。</strong> 这篇动作片段论文是 RUA 的相邻工作，直接回应“要不要让更大的模型中途检查”。作者复用冻结策略，在提交前检查候选；四步延迟下，在 Kinetix 比 RTC 高 15.0 个百分点，在 LIBERO 配 GR00T N1.7 比单候选异步执行高 5.2 点。两项对照使用不同基准和基线，不能混成一个平均收益。<a href="https://arxiv.org/abs/2610.28019">PACT-VLA 论文</a></p>
+<h2 id="s3">训练模型还是改接口？</h2>
+<p><strong>11 月 1 日论文、11 月 3 日技术博客，uni-robot-agent。</strong> 作者统一开源模型、仿真和真机之间的工具与返回格式。无需特权输入，Qwen3.8-Flash-Next 得到 RoboDojo Score 31.39，文中引用的 Astra–RoboProbe 为 28.97。这里的数是基准分而非每百次成功数；比较中接口也变了。它给开源学生提供的更长期价值，是能保存同一种格式的数据继续训练。<a href="https://arxiv.org/abs/2611.01560">论文</a> · <a href="https://openrua.ai/uni-robot-agent">团队技术博客</a></p>
+<p><strong>11 月 14 日，PEAR。</strong> 它把训练资源放在仿真交互和任务奖励上，学习末端动作；Guava 把资源放在工具教师演示和失败恢复上，学习下一次工具调用。两者都能训练出可本地部署的学生，但交换数据集时，动作空间、观测频率和监督目标都需要重新定义。“多少小时”独自回答不了训练难度。<a href="https://mit-han-lab.github.io/pear-blog/">PEAR 博客及开放模型</a></p>
+<p><strong>读下一篇论文时，可以直接找四样东西。</strong> 找一条模型原始输出，看它交付坐标、工具、代码还是子目标；找紧随其后的观察，看闭环在哪里闭合；找动作与重试的分母，看一次成功用了多少机会；最后找两个只改变一个部件的实验。如果这四项都能找到，就可以把新工作放回前面几条路线，判断哪一部分值得在自己的机器人上复现。</p>
+<h2 id="s4">哪些结果真正回答了同一个问题？</h2>
+<div class="tablewrap" tabindex="0"><table>
+<thead>
+<tr>
+<th>想弄清的因果问题</th>
+<th>最贴近的论文对照</th>
+<th>还一起改变了什么？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>给同一个模型更多几何信息有用吗？</td>
+<td>K1，Astra 的 RGB 接口 61.1%，整套感知接口 88.9%</td>
+<td>深度、锚点、测量和抓取假设同时加入，不能拆出单项收益</td>
+</tr>
+<tr>
+<td>恢复经验能帮助新任务吗？</td>
+<td>Guava，未见任务上有／无扰动轨迹为 90.8%／77.1%</td>
+<td>数据组成随之改变，不能推断所有任务都需要相同比例的分支</td>
+</tr>
+<tr>
+<td>换一种动作提交策略有用吗？</td>
+<td>PACT-VLA，同一冻结策略在三个真机任务上 60% → 82%</td>
+<td>候选生成和提交前筛选共同构成新方案</td>
+</tr>
+<tr>
+<td>学生在本地接口里学到了多少？</td>
+<td>Piper，固定原生判据和执行器，33/450 → 150/450</td>
+<td>这组实验测整套 SFT，无法单独解释哪类训练轨迹贡献最大</td>
+</tr>
+</tbody>
+</table></div>
+<p>因此，如果最常见的失败是抓错物体，我会先看 K1 的目标绑定和 Guava 的反馈安排；如果目标正确却总在碰到箱沿后才纠偏，会优先看 RPent 的重置接近位和 PACT-VLA 的提交时刻。总成功率能告诉人该不该继续排查，知道失败发生在哪一层，才知道该读哪篇论文。</p><div class="pager"><a href="term.html">示范、修复与蒸馏</a></div></main><aside class="right"><small>本页目录</small><a href="#s1">感知接口变了，模型还一样吗？</a><a href="#s2">代码多试了多少次？观察晚了多少步？</a><a href="#s3">训练模型还是改接口？</a><a href="#s4">哪些结果真正回答了同一个问题？</a></aside></div><footer>RUA Field Notes · 杨晨杰 · 2026.11.24 <a href="https://cionhuang.github.io/A_Brief_Tutorial_of_Humanoid_Robot/">教程版式参考</a></footer><script src="assets/guide.js"></script></body></html>
