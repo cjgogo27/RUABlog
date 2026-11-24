@@ -1,0 +1,21 @@
+# What has changed in robot-use agents in two months?
+
+These readings span 24 September to 24 November 2026, dated by first release or the authors' article. Four questions connect them to Piper: which geometry is observable, what persists across decisions, how the evaluator charges actions, and where experience changes the system. Each number belongs to its own experiment.
+## Who supplies the geometry?
+**24 September · Robo-Harness K1.** On matched LIBERO-PRO tasks, the same Astra scored 61.1% with the RGB harness and 88.9% with calibrated depth, anchors and geometric queries. Holding the model fixed makes this a useful interface comparison. For our shell game, we could hold student and budget fixed, change only instance binding, and count repeated inspections. [Authors' paper](https://arxiv.org/abs/2609.29389)
+
+**October · Astranomy research blog.** Direct inference averaged 18.56 seconds per call. For a moving object, the scene can change before the decision arrives. The first chapter covers the three policy roles. Their failure replays are worth studying separately for targeting, closing and transport errors. [Research blog and replays](https://research.nvidia.com/labs/srl/projects/astranomy/)
+## What does it cost to let the agent write code?
+**1 October · OpenRUA.** Claude Code with Opus 5 generated programs against the robot's native interfaces. The authors report 99.0% on CaP-Bench and 87.0% on LIBERO-PRO. For the same red-can task, a code policy can choose loops and retries as well as motion targets. Count the low-level calls dispatched by the program when comparing against a tool selector. [Project paper](https://arxiv.org/abs/2610.02459)
+
+**2 November · Behind the RoboDojo Boom.** The OpenRUA Team reconstructed control steps from public timelines. Of 99 successes in the 210 RoboDawn traces they analyzed, 97 came after the native step limit. An unchanged robot, start state and video can receive a different score solely because of the cutoff. That is why every table here identifies its denominator and endpoint. [Authors' evaluation blog](https://openrua.ai/revisiting-rua)
+## What can an open student learn?
+**1 November paper, 3 November blog · uni-robot-agent.** Without privileged inputs, Qwen3.8-Flash-Next scored 31.39 on RoboDojo, versus a published Astra–RoboProbe score of 28.97. This is a benchmark score, and the two interfaces differ. For a local 4B student, the transferable idea is to standardize tools and returns so that further training becomes possible and changes to model and interface can be tested separately. [Paper](https://arxiv.org/abs/2611.01560) · [Engineering blog](https://openrua.ai/uni-robot-agent)
+
+**14 November · PEAR.** The team trained an open 27B reasoning model with simulated task rewards to emit the next arm action directly. They report 1.6% to 74.4% on LIBERO and 0% to 60% on their physical dual-arm trials. This gives a concrete answer to whether training needs teacher action labels. A useful Piper comparison would allocate the same simulation budget to tool demonstrations and to rewards for end-effector actions. [Research blog](https://mit-han-lab.github.io/pear-blog/) · [Technical report](https://mit-han-lab.github.io/pear-blog/paper.pdf)
+## Three comparisons to take back to the bench
+Guava stores capability in student weights. ASPIRE also stores validated fixes as retrievable skills. In its real Rubik's cube example, time and tokens per completed face turn declined as skills accumulated, including failed attempts and recovery in the accounting. ENPIRE brings resets, checks and experimental iteration into the loop. Reusing code, updating weights and granting another attempt can each rescue a failure at very different costs. [Guava](https://guava-harness.github.io/) · [ASPIRE skill learning](https://research.nvidia.com/labs/gear/aspire/) · [ENPIRE](https://research.nvidia.com/labs/gear/enpire/)
+
+Our next Piper comparison would fix the model when varying perception, fix the tools when varying the student, and expose different reviewers to perturbations at the same moment. Recording which failures were recovered, after how many actions and at what delay, would let another lab decide whether the higher score is worth reproducing.
+
+[中文](../zh/survey.md) · [English](../en/survey.md)
