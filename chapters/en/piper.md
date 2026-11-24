@@ -1,6 +1,8 @@
-# From choosing a skill to writing a program
+# Agentic Policy: choosing tools and writing programs
 
 The gripper has closed; the can is still on the table. If the last call returned only “done”, the model may now request a move to the bin. Tool design starts with two questions: who handles localization and approach, and what evidence can the tool return about the grasp?
+**Two execution schedules recur here.** Guava asks the model for another decision after each tool returns. ASPIRE can encode perception, branches and retries in a program. That program calls perception and motion APIs during the rollout; between attempts the coding agent reads traces, diagnoses the failure and revises the code. Validated skills can be retrieved later. As you read, track whether feedback reaches the model now, a running program, or the next round of skill development. [Guava](https://guava-harness.github.io/) · [ASPIRE](https://research.nvidia.com/labs/gear/aspire/)
+
 ## Which skill is feasible here?
 **SayCan** scores each candidate skill twice. A language model estimates whether the skill fits the instruction, and a learned value function estimates whether it can succeed from the current state. The system combines the scores, executes a skill and selects again. Fetching the can might be semantically appropriate even when the bin blocks access. The authors report that PaLM-SayCan chose the correct skill sequence 84% of the time and executed tasks successfully 74% of the time. The ten-point separation is a reason to measure planning and physical execution separately. [SayCan method and results](https://say-can.github.io/)
 ## Tool granularity sets the observation schedule

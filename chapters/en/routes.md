@@ -1,4 +1,4 @@
-# From an image to an end-effector action
+# Direct Policy: GPT emits end-effector actions
 
 Move the can two centimetres to one side and take another picture. Which numbers in the model’s next response should change? That question separates two implementations commonly described as direct robot control.
 ## The six quantities in a pose
@@ -7,6 +7,8 @@ The end effector (EEF) here is the gripper. Its spatial position and orientation
 A typical path is **image and instruction → EEF target → inverse kinematics → joint tracking → new image**. It contains two feedback loops. The controller uses encoders to reduce tracking error. The model uses a later image to see whether the task progressed. If the arm reached the old target after nudging the can out of the way, both “target reached” and “grasp missed” are accurate reports.
 
 **Astranomy exposes this division of labour.** It evaluates GPT-6 Astra generating actions directly, operating as an agent with persistent history, and reviewing actions proposed by another policy. On RoboLab-120 these settings scored 66.3%, 74.8% and 66.5%. The agent beat direct generation by 8.5 points. Its ablations found value in history and no further gain from adding tools within the agentic setting. Remembering the last failed attempt matters when interpreting the headline comparison. [Authors’ study, prompts and replays](https://research.nvidia.com/labs/srl/projects/astranomy/)
+One published Astranomy Direct prompt specifies eight values per row: three root-frame coordinates, a unit quaternion and a gripper command. The policy emits 3–15 absolute targets. Each row runs for one interval at 15 Hz, after which the updated views and measured pose return at the next replan. The pose refers to the gripper flange; targeting the finger pads requires an offset. The message happens to be delivered through a function call, yet GPT still chooses every pose. Reading the payload is more informative than counting tool names. [Published Astranomy action protocol](https://research.nvidia.com/labs/srl/projects/astranomy/)
+
 ## How does an action-trained model differ?
 Given the same image and words, a model can also learn from repeated examples of how a demonstrator moved next. **RT-2** represents robot actions as tokens and co-fine-tunes on robot and vision-language tasks. **OpenVLA** offers an open 7B implementation of the broader idea: visual features and the instruction condition discrete action tokens, which are decoded into executable values. It used roughly 970,000 real robot demonstrations. Across 29 tasks and multiple embodiments, the authors report a 16.5 percentage-point advantage over RT-2-X. This compares two trained systems; it does not isolate the contribution of discretization. [RT-2](https://robotics-transformer2.github.io/) · [OpenVLA paper](https://arxiv.org/abs/2406.09246)
 
