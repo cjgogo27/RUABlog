@@ -1,0 +1,42 @@
+﻿Piper 真机录像对应表
+按下列名称保存原速视频；博客构建时将已到位的视频嵌入对应位置。
+
+1. 关节指令与末端位姿共用哪些约束
+joint-eef-a.mp4  关节目标 · 看腕部构型
+joint-eef-b.mp4  末端位姿 · 看 IK 接受的目标
+
+2. 把模型升级的收益摊到四个任务上
+tray-generation-a.mp4  GPT‑6 · 托盘边缘的首次接触
+tray-generation-b.mp4  6.2 · 同一摆位与末端接口
+
+3. 把“到位”“持握”和“放好”分开
+target-binding-a.mp4  顶视 · 目标与相邻物体
+target-binding-b.mp4  同一场侧视 · 指尖接触与短抬升
+
+4. 三种粒度中，程序究竟省掉了什么？
+branch-policy-a.mp4  逐步语义调用 · 抓空后的首次返回
+branch-policy-b.mp4  Python · 同一持握条件如何分支
+
+5. 换成未见的任务组合
+ood-drawer-a.mp4  相同新摆位 · 细工具，从取块到关抽屉
+ood-drawer-b.mp4  相同新摆位 · 语义工具，展开内部执行记录
+
+6. 一秒钟落在哪一边？
+wait-trace-a.mp4  原速末端控制 · 叠加请求起止
+wait-trace-b.mp4  原速语义工具 · 叠加运动起止
+
+7. A · 罐子没被拿起来，谁最先知道？
+can-a.mp4  同一摆位 · GPT‑6 直接出末端位姿
+can-b.mp4  同一摆位 · GPT‑6 逐次调用语义工具
+
+8. B · 抓红物时，拆开的哪一步出了错？
+red-a.mp4  细原语 · 保留定位与下降之间的调用
+red-b.mp4  语义抓取 · 同时显示内部原语日志
+
+9. C · 相同末端接口，换模型后还会停在哪里？
+drawer-a.mp4  GPT‑6 Astra · 直接出末端位姿
+drawer-b.mp4  6.2 Astra · 同预算补测位
+
+10. 一个抽屉何时算真的关上？
+drawer-stop-a.mp4  正视 · 松手并退开后的终态
+drawer-stop-b.mp4  同一场侧视 · 抽屉相对柜体的间隙

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="619.2pt" height="309.6pt" viewBox="0 0 619.2 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>How much of the teacher gap remains?</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>How much of the teacher gap remains?</dc:title>
+    <dc:description>Figure 6 · Fifteen simulated tasks, 30 trials each, with the native criterion in Table 3. The student gains 117 successes, leaving a gap of 161.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 309.6 
+L 619.2 309.6 
+L 619.2 0 
+L 0 0 
+z
+" style="fill: #fffef9"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 145.512 260.064 
+L 575.856 260.064 
+L 575.856 80.496 
+L 145.512 80.496 
+z
+" style="fill: #fffef9"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 145.512 88.658182 
+L 177.07056 88.658182 
+L 177.07056 121.306909 
+L 145.512 121.306909 
+z
+" clip-path="url(#pba0bf68808)" style="fill: #afbdb4"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 145.512 153.955636 
+L 288.96 153.955636 
+L 288.96 186.604364 
+L 145.512 186.604364 
+z
+" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 145.512 219.253091 
+L 442.92752 219.253091 
+L 442.92752 251.901818 
+L 145.512 251.901818 
+z
+" clip-path="url(#pba0bf68808)" style="fill: #345260"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="145.512" y="275.207437" transform="rotate(-0 145.512 275.207437)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="288.96" y="275.207437" transform="rotate(-0 288.96 275.207437)">150</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="432.408" y="275.207437" transform="rotate(-0 432.408 275.207437)">300</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="575.856" y="275.207437" transform="rotate(-0 575.856 275.207437)">450</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="109.054264" transform="rotate(-0 138.512 109.054264)">Qwen3.5-4B</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="174.351719" transform="rotate(-0 138.512 174.351719)">Qwen3.5-4B · SFT</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="239.649173" transform="rotate(-0 138.512 239.649173)">GPT-6 Astra</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: start" x="182.07056" y="107.789264" transform="rotate(-0 182.07056 107.789264)">33/450   (7.3%)</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: start" x="293.96" y="173.086719" transform="rotate(-0 293.96 173.086719)">150/450   (33.3%)</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: start" x="447.92752" y="238.384173" transform="rotate(-0 447.92752 238.384173)">311/450   (69.1%)</text>
+   </g>
+  </g>
+  <g id="text_11">
+   <text style="fill: #197466; font: 700 9px 'Segoe UI'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">06   /   EXISTING PROJECT RECORD · PIPER SIMULATION</text>
+  </g>
+  <g id="text_12">
+   <text style="fill: #172c27; font: 500 18px 'Segoe UI'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">How much of the teacher gap remains?</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pba0bf68808">
+   <rect x="145.512" y="80.496" width="430.344" height="179.568"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -4,6 +4,8 @@
 
 [中文网站](https://cjgogo27.github.io/RUABlog/) · [English site](https://cjgogo27.github.io/RUABlog/index-en.html)
 
+[Piper 真机实验博客 · 理想稿](https://cjgogo27.github.io/RUABlog/piper-action-preview/index.html)
+
 [![机器人策略的执行接口](assets/policy-routes.png)](assets/policy-routes.png)
 
 *从前两行对照 Direct 的末端动作反馈与 Agentic 的程序修复、技能复用。后两行补充规划与动作审阅的位置。*
