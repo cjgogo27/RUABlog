@@ -1,4 +1,4 @@
-Piper 真机录像在正文中的位置
+正文录像索引（Piper 真机 13 段，天行者 2 号仿真 2 段）
 
 1.1 任务与评测场景
   罐子入盒  field-clips/can.mp4  #bench-can
@@ -22,3 +22,7 @@ Piper 真机录像在正文中的位置
 3.2 失败模式与诊断
   从障碍物之间取出红块  field-clips/obstacle.mp4  #bench-obstacle
   关闭抽屉  field-clips/drawer.mp4  #bench-drawer
+
+3.4 跨本体迁移与多具身 Agent 协同
+  天行者 2 号把黄块放进灰盒  field-clips/skywalker-place.mp4  #bench-skywalker-place
+  两台天行者 2 号隔桌接力分拣  field-clips/skywalker-relay.mp4  #bench-skywalker-relay
