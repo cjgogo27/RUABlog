@@ -1,0 +1,7 @@
+layout_seed,approx_sim_mass_g,diagnostic_id,tool_actions,reported_motion_errors,task_success
+4061700001,69,apple_mass500_v43_1,9,0,1
+4061700001,138,apple_tip_density_v39_1,9,0,1
+4061700001,207,apple_mass1500_v43_1,9,0,0
+4061700002,69,apple_mass500_v43_2,9,0,1
+4061700002,138,apple_tip_density_v39_2,9,0,1
+4061700002,207,apple_mass1500_v43_2,9,0,0
