@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>头部相机标定工作台 · 验证报告</title>
+<style>*{box-sizing:border-box}body{font:17px/1.6 system-ui,sans-serif;color:#172c27;background:#fffef9;margin:0}main{max-width:52rem;margin:auto;padding:2rem clamp(1rem,4vw,3rem)}nav{display:flex;justify-content:space-between;gap:1rem}a{color:#156555}h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.2}table{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums}td,th{padding:.55rem .2rem;text-align:left;border-bottom:1px solid #c6d5d0}code{overflow-wrap:anywhere}@media(max-width:500px){table{font-size:.77rem}}</style>
+<main><nav><a href="index.html#calibration">← 返回 §2.6</a><a href="calibration-report-en.html">English</a></nav>
+<h1>头部相机标定工作台 · 验证报告</h1><p>本页是标定工作台导出结果的公开只读视图。头部 RGB 相机固定在颈部连杆，棋盘固定在桌面。9 个姿态用于拟合，以下 3 个独立姿态用于验证。</p>
+<table><thead><tr><th scope="col">留出姿态</th><th scope="col">棋盘原点误差 (mm)</th><th scope="col">角度误差 (°)</th><th scope="col">最大角点误差 (mm)</th></tr></thead><tbody><tr><th scope="row">1</th><td>3.19</td><td>0.44</td><td>3.19</td></tr><tr><th scope="row">2</th><td>5.02</td><td>0.65</td><td>5.02</td></tr><tr><th scope="row">3</th><td>2.52</td><td>0.31</td><td>2.52</td></tr></tbody></table>
+<p>留出角点误差 P95 <b>4.74 mm</b> · 最大角度偏差 <b>0.65°</b>.</p>
+<p>误差衡量同一棋盘在不同姿态下的重建一致性。机器人抓取点的绝对误差需要独立测量。</p>
+<p><a href="evidence/head-calibration-holdout.csv" download>下载三组验证记录 (CSV)</a></p>
+<h2>使用现场工作台</h2><p>在标定工作站本机运行服务，或将服务端口转发至本机后，可进入原工作台查看相机帧、采集姿态并导出外参。</p>
+<a href="http://127.0.0.1:8815/">打开本机标定工作台</a></main></html>

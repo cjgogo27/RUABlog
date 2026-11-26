@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Head-camera calibration workbench · Validation report</title>
+<style>*{box-sizing:border-box}body{font:17px/1.6 system-ui,sans-serif;color:#172c27;background:#fffef9;margin:0}main{max-width:52rem;margin:auto;padding:2rem clamp(1rem,4vw,3rem)}nav{display:flex;justify-content:space-between;gap:1rem}a{color:#156555}h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.2}table{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums}td,th{padding:.55rem .2rem;text-align:left;border-bottom:1px solid #c6d5d0}code{overflow-wrap:anywhere}@media(max-width:500px){table{font-size:.77rem}}</style>
+<main><nav><a href="en.html#calibration">← Back to §2.6</a><a href="calibration-report-zh.html">中文</a></nav>
+<h1>Head-camera calibration workbench · Validation report</h1><p>This public, read-only view reproduces the workbench export. The head RGB camera was mounted on the neck link and the checkerboard stayed on the table. Nine poses were used for fitting. The following three were held out for validation.</p>
+<table><thead><tr><th scope="col">Held-out pose</th><th scope="col">Board origin error (mm)</th><th scope="col">Angular error (°)</th><th scope="col">Largest corner error (mm)</th></tr></thead><tbody><tr><th scope="row">1</th><td>3.19</td><td>0.44</td><td>3.19</td></tr><tr><th scope="row">2</th><td>5.02</td><td>0.65</td><td>5.02</td></tr><tr><th scope="row">3</th><td>2.52</td><td>0.31</td><td>2.52</td></tr></tbody></table>
+<p>Held-out corner error (P95) <b>4.74 mm</b> · Maximum angular deviation <b>0.65°</b>.</p>
+<p>The errors measure cross-pose consistency for the same board. Absolute accuracy at a physical grasp point requires an independent measurement.</p>
+<p><a href="evidence/head-calibration-holdout.csv" download>Download the three validation records (CSV)</a></p>
+<h2>Using the live workbench</h2><p>The original application displays camera frames, captures calibration poses and exports extrinsics. Launch it on the calibration workstation or forward its service port to your machine before opening the link.</p>
+<a href="http://127.0.0.1:8815/">Open the local calibration workbench</a></main></html>

@@ -1,4 +1,4 @@
-正文录像索引（Piper 真机 13 段，天行者 2 号仿真 2 段）
+正文录像索引（工作台真机 16 段，天行者 2 号仿真 2 段。互补视角单列，不增加试次数。）
 
 1.1 任务与评测场景
   罐子入盒  field-clips/can.mp4  #bench-can
@@ -11,6 +11,7 @@
   红物入篮 · 单目标  field-clips/red-basic.mp4  #bench-red-basic
   红物入篮 · 多物体桌面  field-clips/red-clutter.mp4  #bench-red-clutter
   三杯找物  field-clips/cups.mp4  #bench-cups
+  揭杯后目标露出 · 侧视  field-clips/cup-reveal-side.mp4  #bench-cup-reveal-side
   推篮子  field-clips/push.mp4  #bench-push
 
 2.3 随机摆位与未见任务组合
@@ -18,6 +19,8 @@
   随机摆位叠方块  field-clips/stack.mp4  #bench-stack
   先移杯腾位，再放入红块  field-clips/clear-and-place.mp4  #bench-clear-and-place
   红蓝方块分拣  field-clips/sorting.mp4  #bench-sorting
+  蓝块越过黑盒边缘 · 侧视  field-clips/sorting-rim.mp4  #bench-sorting-rim
+  果蔬模型排序 · 复杂桌面  field-clips/produce-order.mp4  #bench-produce-order
 
 3.2 跨本体迁移与多具身 Agent 协同
   天行者 2 号把黄块放进灰盒  field-clips/skywalker-place.mp4  #bench-skywalker-place
