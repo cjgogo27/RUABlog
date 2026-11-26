@@ -39,63 +39,53 @@ L 145.512 80.496
 z
 " style="fill: #fffef9"/>
    </g>
-   <g clip-path="url(#pba0bf68808)">
-    <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAlYAAAD6CAYAAABj5AmjAAAEk0lEQVR4nO3WQQmAQAAAQTWN/UP4NYI9RNAKPhZOZCbBPnfejv2eAOCl9TpHJ8BnLaMDAAD+wlgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBAxFgBAESMFQBA5AHDRAeF0vrPhAAAAABJRU5ErkJggg==" id="image0a8b993c69" transform="scale(1 -1) translate(0 -180)" x="145.512" y="-80.064" width="430.56" height="180"/>
-   </g>
    <g id="patch_3">
     <path d="M 145.512 80.496 
 L 288.96 80.496 
 L 288.96 170.28 
 L 145.512 170.28 
-L 145.512 80.496 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #c6dfcf; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 288.96 80.496 
 L 432.408 80.496 
 L 432.408 170.28 
 L 288.96 170.28 
-L 288.96 80.496 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #c6dfcf; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 432.408 80.496 
 L 575.856 80.496 
 L 575.856 170.28 
 L 432.408 170.28 
-L 432.408 80.496 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #eedbc9; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 145.512 170.28 
 L 288.96 170.28 
 L 288.96 260.064 
 L 145.512 260.064 
-L 145.512 170.28 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #c6dfcf; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 288.96 170.28 
 L 432.408 170.28 
 L 432.408 260.064 
 L 288.96 260.064 
-L 288.96 170.28 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #c6dfcf; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
     <path d="M 432.408 170.28 
 L 575.856 170.28 
 L 575.856 260.064 
 L 432.408 260.064 
-L 432.408 170.28 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #eedbc9; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
