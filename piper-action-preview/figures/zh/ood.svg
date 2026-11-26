@@ -2,12 +2,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="619.2pt" height="309.6pt" viewBox="0 0 619.2 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>留出的组合任务：同样 20 次，谁做成了？</title>
+ <title>留出的组合任务：同样 20 次，成功数</title>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>留出的组合任务：同样 20 次，谁做成了？</dc:title>
+    <dc:title>留出的组合任务：同样 20 次，成功数</dc:title>
     <dc:description>图 4b · 方块从托盘进入已打开的抽屉，再关上抽屉。四个条件复用同一组 20 个新摆位，单独计分。</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
@@ -158,7 +158,7 @@ z
    <text style="fill: #197466; font: 700 9px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">4b   /   动作接口对照</text>
   </g>
   <g id="text_15">
-   <text style="fill: #172c27; font: 500 18px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">留出的组合任务：同样 20 次，谁做成了？</text>
+   <text style="fill: #172c27; font: 500 18px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">留出的组合任务：同样 20 次，成功数</text>
   </g>
  </g>
  <defs>

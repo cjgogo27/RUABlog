@@ -19,10 +19,10 @@
   先移杯腾位，再放入红块  field-clips/clear-and-place.mp4  #bench-clear-and-place
   红蓝方块分拣  field-clips/sorting.mp4  #bench-sorting
 
-3.2 失败模式与诊断
-  从障碍物之间取出红块  field-clips/obstacle.mp4  #bench-obstacle
-  关闭抽屉  field-clips/drawer.mp4  #bench-drawer
-
-3.4 跨本体迁移与多具身 Agent 协同
+3.2 跨本体迁移与多具身 Agent 协同
   天行者 2 号把黄块放进灰盒  field-clips/skywalker-place.mp4  #bench-skywalker-place
   两台天行者 2 号隔桌接力分拣  field-clips/skywalker-relay.mp4  #bench-skywalker-relay
+
+3.3 失败模式与诊断
+  从障碍物之间取出红块  field-clips/obstacle.mp4  #bench-obstacle
+  关闭抽屉  field-clips/drawer.mp4  #bench-drawer
