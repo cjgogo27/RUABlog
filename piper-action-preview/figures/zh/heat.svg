@@ -2,13 +2,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="619.2pt" height="309.6pt" viewBox="0 0 619.2 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>按任务与接口比较模型成功数差值</title>
+ <title>GPT-6 Astra 在四项任务上的成功数</title>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>按任务与接口比较模型成功数差值</dc:title>
-    <dc:description>图 2 · 每格是 6.2 减去 GPT‑6 的成功数，同一任务每格各有 20 个初态。深色表示净增次数较多。</dc:description>
+    <dc:title>GPT-6 Astra 在四项任务上的成功数</dc:title>
+    <dc:description>图 2 · 每格显示相同模型、同一任务的 20 个摆位中成功的场数。</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -41,7 +41,7 @@ z
    </g>
    <g clip-path="url(#pba0bf68808)">
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAlYAAAD6CAYAAABj5AmjAAAE0klEQVR4nO3YMU0DYBhFUUoqoGOhcjDAjAEUoAIzGEABSwkGSAikYx0UCV1u8iV/zlHwxpu3+fr5vNxA6LDbT09gQR/fx+kJAFfdTg8AAFiFsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiGynB7Ce3/NpegIAjPBYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEhBUAQERYAQBEtn/n0/QGFnO/209PAIARHisAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCICCsAgIiwAgCIbO6eny7TI1jLy+PD9AQW9Pr2Pj0B4CqPFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBARFgBAESEFQBA5B/qbxLRXQ3dDwAAAABJRU5ErkJggg==" id="image6793e5b518" transform="scale(1 -1) translate(0 -180)" x="145.512" y="-80.064" width="430.56" height="180"/>
+iVBORw0KGgoAAAANSUhEUgAAAlYAAAD6CAYAAABj5AmjAAAE9klEQVR4nO3YO0oDUBRFUZUgfopEiKCIAXsre0dh5VgchHNMmyJEUNPpJDY8eKw1glNdNvf07fPj7wRC291+9AQm9Ly5Hz2ByWxub0ZPYEJnowcAAMxCWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARIQVAEBEWAEARBaHn+PoDUxmeX05egIT+vp1q2gtr9wqej5WAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAAARYQUAEBFWAACRxfvry+gNTObwfRw9gQk9rlejJzCZh9Xd6AlMyMcKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIovtbj96A5M5/BxHT2BCy+uL0ROYzNP6fPQEJuRjBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQEVYAABFhBQAQ+QcOvRfgBYcR4AAAAABJRU5ErkJggg==" id="image183cf8bc74" transform="scale(1 -1) translate(0 -180)" x="145.512" y="-80.064" width="430.56" height="180"/>
    </g>
    <g id="patch_3">
     <path d="M 145.512 80.496 
@@ -240,59 +240,59 @@ z
     </g>
    </g>
    <g id="text_9">
-    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="105.971297" transform="rotate(-0 199.305 105.971297)">+5</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="105.971297" transform="rotate(-0 199.305 105.971297)">13/20</text>
    </g>
    <g id="text_10">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="105.971297" transform="rotate(-0 306.891 105.971297)">+3</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="105.971297" transform="rotate(-0 306.891 105.971297)">14/20</text>
    </g>
    <g id="text_11">
-    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="105.971297" transform="rotate(-0 414.477 105.971297)">+5</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="105.971297" transform="rotate(-0 414.477 105.971297)">11/20</text>
    </g>
    <g id="text_12">
-    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="105.971297" transform="rotate(-0 522.063 105.971297)">+5</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="105.971297" transform="rotate(-0 522.063 105.971297)">5/20</text>
    </g>
    <g id="text_13">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="150.863297" transform="rotate(-0 199.305 150.863297)">+2</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="150.863297" transform="rotate(-0 199.305 150.863297)">11/20</text>
    </g>
    <g id="text_14">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="150.863297" transform="rotate(-0 306.891 150.863297)">+1</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="150.863297" transform="rotate(-0 306.891 150.863297)">12/20</text>
    </g>
    <g id="text_15">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="150.863297" transform="rotate(-0 414.477 150.863297)">+2</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="150.863297" transform="rotate(-0 414.477 150.863297)">10/20</text>
    </g>
    <g id="text_16">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="150.863297" transform="rotate(-0 522.063 150.863297)">+2</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="150.863297" transform="rotate(-0 522.063 150.863297)">6/20</text>
    </g>
    <g id="text_17">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="195.755297" transform="rotate(-0 199.305 195.755297)">+1</text>
+    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="195.755297" transform="rotate(-0 199.305 195.755297)">17/20</text>
    </g>
    <g id="text_18">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="195.755297" transform="rotate(-0 306.891 195.755297)">+1</text>
+    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="195.755297" transform="rotate(-0 306.891 195.755297)">17/20</text>
    </g>
    <g id="text_19">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="195.755297" transform="rotate(-0 414.477 195.755297)">+2</text>
+    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="195.755297" transform="rotate(-0 414.477 195.755297)">16/20</text>
    </g>
    <g id="text_20">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="195.755297" transform="rotate(-0 522.063 195.755297)">+2</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="195.755297" transform="rotate(-0 522.063 195.755297)">12/20</text>
    </g>
    <g id="text_21">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="240.647297" transform="rotate(-0 199.305 240.647297)">+1</text>
+    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="199.305" y="240.647297" transform="rotate(-0 199.305 240.647297)">16/20</text>
    </g>
    <g id="text_22">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="240.647297" transform="rotate(-0 306.891 240.647297)">+0</text>
+    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="306.891" y="240.647297" transform="rotate(-0 306.891 240.647297)">18/20</text>
    </g>
    <g id="text_23">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="240.647297" transform="rotate(-0 414.477 240.647297)">+2</text>
+    <text style="fill: #ffffff; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="414.477" y="240.647297" transform="rotate(-0 414.477 240.647297)">15/20</text>
    </g>
    <g id="text_24">
-    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="240.647297" transform="rotate(-0 522.063 240.647297)">+2</text>
+    <text style="fill: #172c27; font: 700 11px 'Microsoft YaHei'; text-anchor: middle" x="522.063" y="240.647297" transform="rotate(-0 522.063 240.647297)">13/20</text>
    </g>
   </g>
   <g id="text_25">
    <text style="fill: #197466; font: 700 9px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">02   /   动作接口对照</text>
   </g>
   <g id="text_26">
-   <text style="fill: #172c27; font: 500 18px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">按任务与接口比较模型成功数差值</text>
+   <text style="fill: #172c27; font: 500 18px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">GPT-6 Astra 在四项任务上的成功数</text>
   </g>
  </g>
  <defs>

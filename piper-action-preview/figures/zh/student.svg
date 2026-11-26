@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>工具蒸馏后，离教师还有多远？</dc:title>
-    <dc:description>图 7 · 15 个仿真任务各 30 场，原生成功数与表 4 相同。学生净增 117 次，和教师仍差 161 次。</dc:description>
+    <dc:description>图 7 · 15 个仿真任务各 30 场，原生成功数与表 5 的 N-SR 列对应。学生净增 117 次，和教师仍差 161 次。</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>

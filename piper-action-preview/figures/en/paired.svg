@@ -2,13 +2,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="619.2pt" height="309.6pt" viewBox="0 0 619.2 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>Who succeeds on the same layout?</title>
+ <title>Two interfaces tie overall. Where do they differ?</title>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>Who succeeds on the same layout?</dc:title>
-    <dc:description>Figure 3 · 6.2 Astra, 80 pairs. Row and column totals match Figure 1. Three layouts favor direct poses alone and ten favor semantic tools alone.</dc:description>
+    <dc:title>Two interfaces tie overall. Where do they differ?</dc:title>
+    <dc:description>Figure 3 · With GPT-6 Astra fixed, semantic calls and Python tool programs each score 62/80. Bars show the successes on each task.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -39,92 +39,182 @@ L 145.512 80.496
 z
 " style="fill: #fffef9"/>
    </g>
-   <g clip-path="url(#pba0bf68808)">
-    <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAlYAAAD6CAYAAABj5AmjAAAEqElEQVR4nO3YMQ3CUABFUcrOjgckoKUbSxUgjZkZDWhpJfzlJp+QcxS88eYt7+9nPwH8uNvlOnsCwNB59gAAgH8hrAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsIKACAirAAAIsv9ue2zRwCMvB7r7AkAQx4rAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiAgrAICIsAIAiBzvcQk9GBnyVAAAAABJRU5ErkJggg==" id="imagecc06706ddc" transform="scale(1 -1) translate(0 -180)" x="145.512" y="-80.064" width="430.56" height="180"/>
-   </g>
    <g id="patch_3">
-    <path d="M 145.512 80.496 
-L 360.684 80.496 
-L 360.684 170.28 
-L 145.512 170.28 
-L 145.512 80.496 
+    <path d="M 145.512 88.658182 
+L 478.050545 88.658182 
+L 478.050545 103.578299 
+L 145.512 103.578299 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
    </g>
    <g id="patch_4">
-    <path d="M 360.684 80.496 
-L 575.856 80.496 
-L 575.856 170.28 
-L 360.684 170.28 
-L 360.684 80.496 
+    <path d="M 145.512 132.54088 
+L 478.050545 132.54088 
+L 478.050545 147.460997 
+L 145.512 147.460997 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
    </g>
    <g id="patch_5">
-    <path d="M 145.512 170.28 
-L 360.684 170.28 
-L 360.684 260.064 
-L 145.512 260.064 
-L 145.512 170.28 
+    <path d="M 145.512 176.423578 
+L 458.489455 176.423578 
+L 458.489455 191.343695 
+L 145.512 191.343695 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
    </g>
    <g id="patch_6">
-    <path d="M 360.684 170.28 
-L 575.856 170.28 
-L 575.856 260.064 
-L 360.684 260.064 
-L 360.684 170.28 
+    <path d="M 145.512 220.306276 
+L 380.245091 220.306276 
+L 380.245091 235.226393 
+L 145.512 235.226393 
 z
-" clip-path="url(#pba0bf68808)" style="fill: none; stroke: #fffef9; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 145.512 105.333607 
+L 458.489455 105.333607 
+L 458.489455 120.253724 
+L 145.512 120.253724 
+z
+" clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 145.512 149.216305 
+L 497.611636 149.216305 
+L 497.611636 164.136422 
+L 145.512 164.136422 
+z
+" clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 145.512 193.099003 
+L 438.928364 193.099003 
+L 438.928364 208.01912 
+L 145.512 208.01912 
+z
+" clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 145.512 236.981701 
+L 399.806182 236.981701 
+L 399.806182 251.901818 
+L 145.512 251.901818 
+z
+" clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1"/>
      <g id="text_1">
-      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="253.098" y="275.207437" transform="rotate(-0 253.098 275.207437)">Semantic success</text>
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="145.512" y="275.207437" transform="rotate(-0 145.512 275.207437)">0</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2"/>
      <g id="text_2">
-      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="468.27" y="275.207437" transform="rotate(-0 468.27 275.207437)">Semantic failure</text>
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="243.317455" y="275.207437" transform="rotate(-0 243.317455 275.207437)">5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="341.122909" y="275.207437" transform="rotate(-0 341.122909 275.207437)">10</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="438.928364" y="275.207437" transform="rotate(-0 438.928364 275.207437)">15</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: middle" x="536.733818" y="275.207437" transform="rotate(-0 536.733818 275.207437)">20</text>
      </g>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
-     <g id="line2d_3"/>
-     <g id="text_3">
-      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="129.459719" transform="rotate(-0 138.512 129.459719)">EEF success</text>
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="108.527672" transform="rotate(-0 138.512 108.527672)">Can into bin</text>
      </g>
     </g>
     <g id="ytick_2">
-     <g id="line2d_4"/>
-     <g id="text_4">
-      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="219.243719" transform="rotate(-0 138.512 219.243719)">EEF failure</text>
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="152.41037" transform="rotate(-0 138.512 152.41037)">Close drawer</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="196.293068" transform="rotate(-0 138.512 196.293068)">Remove cube</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9"/>
+     <g id="text_9">
+      <text style="fill: #172c27; font: 11px 'Segoe UI'; text-anchor: end" x="138.512" y="240.175766" transform="rotate(-0 138.512 240.175766)">Red objects</text>
      </g>
     </g>
    </g>
-   <g id="text_5">
-    <text style="fill: #ffffff; font: 700 25px 'Segoe UI'; text-anchor: middle" x="253.098" y="131.766906" transform="rotate(-0 253.098 131.766906)">58</text>
+   <g id="text_10">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="482.050545" y="98.669803" transform="rotate(-0 482.050545 98.669803)">17</text>
    </g>
-   <g id="text_6">
-    <text style="fill: #172c27; font: 700 25px 'Segoe UI'; text-anchor: middle" x="468.27" y="131.766906" transform="rotate(-0 468.27 131.766906)">3</text>
+   <g id="text_11">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="482.050545" y="142.552501" transform="rotate(-0 482.050545 142.552501)">17</text>
    </g>
-   <g id="text_7">
-    <text style="fill: #172c27; font: 700 25px 'Segoe UI'; text-anchor: middle" x="253.098" y="221.550906" transform="rotate(-0 253.098 221.550906)">10</text>
+   <g id="text_12">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="462.489455" y="186.435199" transform="rotate(-0 462.489455 186.435199)">16</text>
    </g>
-   <g id="text_8">
-    <text style="fill: #172c27; font: 700 25px 'Segoe UI'; text-anchor: middle" x="468.27" y="221.550906" transform="rotate(-0 468.27 221.550906)">9</text>
+   <g id="text_13">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="384.245091" y="230.317897" transform="rotate(-0 384.245091 230.317897)">12</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="462.489455" y="115.345228" transform="rotate(-0 462.489455 115.345228)">16</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="501.611636" y="159.227926" transform="rotate(-0 501.611636 159.227926)">18</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="442.928364" y="203.110624" transform="rotate(-0 442.928364 203.110624)">15</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #172c27; font: 10px 'Segoe UI'; text-anchor: start" x="403.806182" y="246.993322" transform="rotate(-0 403.806182 246.993322)">13</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_11">
+     <path d="M 386.822565 61.140893 
+L 404.822565 61.140893 
+L 404.822565 54.840893 
+L 386.822565 54.840893 
+z
+" style="fill: #197466"/>
+    </g>
+    <g id="text_18">
+     <text style="fill: #172c27; font: 9px 'Segoe UI'; text-anchor: start" x="412.022565" y="61.140893" transform="rotate(-0 412.022565 61.140893)">Semantic tools</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 488.315846 61.140893 
+L 506.315846 61.140893 
+L 506.315846 54.840893 
+L 488.315846 54.840893 
+z
+" style="fill: #b66536"/>
+    </g>
+    <g id="text_19">
+     <text style="fill: #172c27; font: 9px 'Segoe UI'; text-anchor: start" x="513.515846" y="61.140893" transform="rotate(-0 513.515846 61.140893)">Python + tools</text>
+    </g>
    </g>
   </g>
-  <g id="text_9">
+  <g id="text_20">
    <text style="fill: #197466; font: 700 9px 'Segoe UI'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">03   /   ACTION INTERFACE COMPARISON</text>
   </g>
-  <g id="text_10">
-   <text style="fill: #172c27; font: 500 18px 'Segoe UI'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">Who succeeds on the same layout?</text>
+  <g id="text_21">
+   <text style="fill: #172c27; font: 500 18px 'Segoe UI'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">Two interfaces tie overall. Where do they differ?</text>
   </g>
  </g>
  <defs>
