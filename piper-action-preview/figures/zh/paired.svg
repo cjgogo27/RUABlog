@@ -2,13 +2,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="619.2pt" height="309.6pt" viewBox="0 0 619.2 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>总分相同，逐任务结果有何差别？</title>
+ <title>一场任务中，模型决策多少次？</title>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>总分相同，逐任务结果有何差别？</dc:title>
-    <dc:description>图 3 · 使用 GPT-6 Astra 时，逐步调用语义工具与用 Python 调用工具各完成 62/80 场。条长表示各任务的成功数。</dc:description>
+    <dc:title>一场任务中，模型决策多少次？</dc:title>
+    <dc:description>图 3 · 逐步语义调用与 CAP 的每场模型决策次数中位数，沿用表 1 的口径。一次决策可以触发多次夹爪动作。</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -41,64 +41,16 @@ z
    </g>
    <g id="patch_3">
     <path d="M 145.512 88.658182 
-L 478.050545 88.658182 
-L 478.050545 103.578299 
-L 145.512 103.578299 
+L 522.063 88.658182 
+L 522.063 140.091108 
+L 145.512 140.091108 
 z
 " clip-path="url(#pba0bf68808)" style="fill: #197466"/>
    </g>
    <g id="patch_4">
-    <path d="M 145.512 132.54088 
-L 478.050545 132.54088 
-L 478.050545 147.460997 
-L 145.512 147.460997 
-z
-" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
-   </g>
-   <g id="patch_5">
-    <path d="M 145.512 176.423578 
-L 458.489455 176.423578 
-L 458.489455 191.343695 
-L 145.512 191.343695 
-z
-" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 145.512 220.306276 
-L 380.245091 220.306276 
-L 380.245091 235.226393 
-L 145.512 235.226393 
-z
-" clip-path="url(#pba0bf68808)" style="fill: #197466"/>
-   </g>
-   <g id="patch_7">
-    <path d="M 145.512 105.333607 
-L 458.489455 105.333607 
-L 458.489455 120.253724 
-L 145.512 120.253724 
-z
-" clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
-   </g>
-   <g id="patch_8">
-    <path d="M 145.512 149.216305 
-L 497.611636 149.216305 
-L 497.611636 164.136422 
-L 145.512 164.136422 
-z
-" clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
-   </g>
-   <g id="patch_9">
-    <path d="M 145.512 193.099003 
-L 438.928364 193.099003 
-L 438.928364 208.01912 
-L 145.512 208.01912 
-z
-" clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
-   </g>
-   <g id="patch_10">
-    <path d="M 145.512 236.981701 
-L 399.806182 236.981701 
-L 399.806182 251.901818 
+    <path d="M 145.512 200.468892 
+L 306.891 200.468892 
+L 306.891 251.901818 
 L 145.512 251.901818 
 z
 " clip-path="url(#pba0bf68808)" style="fill: #b66536"/>
@@ -113,25 +65,25 @@ z
     <g id="xtick_2">
      <g id="line2d_2"/>
      <g id="text_2">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="243.317455" y="275.857125" transform="rotate(-0 243.317455 275.857125)">5</text>
+      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="253.098" y="275.857125" transform="rotate(-0 253.098 275.857125)">2</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3"/>
      <g id="text_3">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="341.122909" y="275.857125" transform="rotate(-0 341.122909 275.857125)">10</text>
+      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="360.684" y="275.857125" transform="rotate(-0 360.684 275.857125)">4</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_4"/>
      <g id="text_4">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="438.928364" y="275.857125" transform="rotate(-0 438.928364 275.857125)">15</text>
+      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="468.27" y="275.857125" transform="rotate(-0 468.27 275.857125)">6</text>
      </g>
     </g>
     <g id="xtick_5">
      <g id="line2d_5"/>
      <g id="text_5">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="536.733818" y="275.857125" transform="rotate(-0 536.733818 275.857125)">20</text>
+      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: middle" x="575.856" y="275.857125" transform="rotate(-0 575.856 275.857125)">8</text>
      </g>
     </g>
    </g>
@@ -139,82 +91,28 @@ z
     <g id="ytick_1">
      <g id="line2d_6"/>
      <g id="text_6">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: end" x="138.512" y="108.852516" transform="rotate(-0 138.512 108.852516)">罐子入箱</text>
+      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: end" x="138.512" y="118.771208" transform="rotate(-0 138.512 118.771208)">语义工具</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_7"/>
      <g id="text_7">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: end" x="138.512" y="152.735214" transform="rotate(-0 138.512 152.735214)">关闭抽屉</text>
-     </g>
-    </g>
-    <g id="ytick_3">
-     <g id="line2d_8"/>
-     <g id="text_8">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: end" x="138.512" y="196.617911" transform="rotate(-0 138.512 196.617911)">托盘取方块</text>
-     </g>
-    </g>
-    <g id="ytick_4">
-     <g id="line2d_9"/>
-     <g id="text_9">
-      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: end" x="138.512" y="240.500609" transform="rotate(-0 138.512 240.500609)">红物入篮</text>
+      <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: end" x="138.512" y="230.581917" transform="rotate(-0 138.512 230.581917)">CAP</text>
      </g>
     </g>
    </g>
-   <g id="text_10">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="482.050545" y="98.872147" transform="rotate(-0 482.050545 98.872147)">17</text>
+   <g id="text_8">
+    <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: start" x="527.063" y="117.403942" transform="rotate(-0 527.063 117.403942)">7</text>
    </g>
-   <g id="text_11">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="482.050545" y="142.754845" transform="rotate(-0 482.050545 142.754845)">17</text>
-   </g>
-   <g id="text_12">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="462.489455" y="186.637543" transform="rotate(-0 462.489455 186.637543)">16</text>
-   </g>
-   <g id="text_13">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="384.245091" y="230.520241" transform="rotate(-0 384.245091 230.520241)">12</text>
-   </g>
-   <g id="text_14">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="462.489455" y="115.547572" transform="rotate(-0 462.489455 115.547572)">16</text>
-   </g>
-   <g id="text_15">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="501.611636" y="159.43027" transform="rotate(-0 501.611636 159.43027)">18</text>
-   </g>
-   <g id="text_16">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="442.928364" y="203.312968" transform="rotate(-0 442.928364 203.312968)">15</text>
-   </g>
-   <g id="text_17">
-    <text style="fill: #172c27; font: 10px 'Microsoft YaHei'; text-anchor: start" x="403.806182" y="247.195666" transform="rotate(-0 403.806182 247.195666)">13</text>
-   </g>
-   <g id="legend_1">
-    <g id="patch_11">
-     <path d="M 407.53944 61.786361 
-L 425.53944 61.786361 
-L 425.53944 55.486361 
-L 407.53944 55.486361 
-z
-" style="fill: #197466"/>
-    </g>
-    <g id="text_18">
-     <text style="fill: #172c27; font: 9px 'Microsoft YaHei'; text-anchor: start" x="432.73944" y="61.786361" transform="rotate(-0 432.73944 61.786361)">语义工具</text>
-    </g>
-    <g id="patch_12">
-     <path d="M 486.73944 61.786361 
-L 504.73944 61.786361 
-L 504.73944 55.486361 
-L 486.73944 55.486361 
-z
-" style="fill: #b66536"/>
-    </g>
-    <g id="text_19">
-     <text style="fill: #172c27; font: 9px 'Microsoft YaHei'; text-anchor: start" x="511.93944" y="61.786361" transform="rotate(-0 511.93944 61.786361)">Python 调工具</text>
-    </g>
+   <g id="text_9">
+    <text style="fill: #172c27; font: 11px 'Microsoft YaHei'; text-anchor: start" x="311.891" y="229.214652" transform="rotate(-0 311.891 229.214652)">3</text>
    </g>
   </g>
-  <g id="text_20">
+  <g id="text_10">
    <text style="fill: #197466; font: 700 9px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">03   /   动作接口对照</text>
   </g>
-  <g id="text_21">
-   <text style="fill: #172c27; font: 500 18px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">总分相同，逐任务结果有何差别？</text>
+  <g id="text_11">
+   <text style="fill: #172c27; font: 500 18px 'Microsoft YaHei'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">一场任务中，模型决策多少次？</text>
   </g>
  </g>
  <defs>
