@@ -4,8 +4,6 @@ Given “put the can in the bin”, Astranomy asks GPT for the gripper’s next 
 
 [中文网站](https://cjgogo27.github.io/RUABlog/) · [English site](https://cjgogo27.github.io/RUABlog/index-en.html)
 
-[Piper hardware study · illustrative edition](https://cjgogo27.github.io/RUABlog/piper-action-preview/en.html)
-
 [![Robot policy interfaces](assets/policy-routes.png)](assets/policy-routes.png)
 
 *The first two rows compare EEF feedback with program repair and skill reuse. The lower rows locate orchestration and action review.*

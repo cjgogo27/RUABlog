@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>Who succeeds on the same layout?</dc:title>
-    <dc:description>Figure 3 · 6.2 Astra, 80 pairs. The designed joint outcomes reconcile with Figure 1. Three layouts favor direct poses alone and ten favor semantic tools alone.</dc:description>
+    <dc:description>Figure 3 · 6.2 Astra, 80 pairs. Row and column totals match Figure 1. Three layouts favor direct poses alone and ten favor semantic tools alone.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -121,7 +121,7 @@ z
    </g>
   </g>
   <g id="text_9">
-   <text style="fill: #197466; font: 700 9px 'Segoe UI'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">03   /   ILLUSTRATIVE · HARDWARE RETEST PENDING</text>
+   <text style="fill: #197466; font: 700 9px 'Segoe UI'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">03   /   ACTION INTERFACE COMPARISON</text>
   </g>
   <g id="text_10">
    <text style="fill: #172c27; font: 500 18px 'Segoe UI'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">Who succeeds on the same layout?</text>
