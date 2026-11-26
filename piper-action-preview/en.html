@@ -100,43 +100,54 @@ main h3{margin-top:30px}
 <div class="inline-replays"><figure class="bench-case" id="bench-tray-simple"><video id="video-tray-simple" controls playsinline preload="none" poster="field-clips/tray-simple.webp" src="field-clips/tray-simple.mp4" aria-label="Cube removal · clear table"></video><figcaption><strong>Cube removal · clear table</strong><small>Standard tasks · Overhead · full recording, 06:44</small><p>A single blue block sits inside the tray. Pause at lift and placement to distinguish clearing the rim from coming to rest on the table.</p></figcaption><div class="bench-cues"><button type="button" data-time="0" aria-controls="video-tray-simple"><span>00:00</span> Cube in tray</button><button type="button" data-time="80" aria-controls="video-tray-simple"><span>01:20</span> Approach</button><button type="button" data-time="210" aria-controls="video-tray-simple"><span>03:30</span> Placement outside</button></div></figure><figure class="bench-case" id="bench-tray-clutter"><video id="video-tray-clutter" controls playsinline preload="none" poster="field-clips/tray-clutter.webp" src="field-clips/tray-clutter.mp4" aria-label="Cube removal · cluttered table"></video><figcaption><strong>Cube removal · cluttered table</strong><small>Clutter and obstacles · Overhead · full recording, 07:39</small><p>The goal is still to remove the blue cube. Other blocks and small objects now occupy space outside the tray. Compare the chosen landing area with the clear-table recording.</p></figcaption><div class="bench-cues"><button type="button" data-time="0" aria-controls="video-tray-clutter"><span>00:00</span> Space outside the tray</button><button type="button" data-time="179" aria-controls="video-tray-clutter"><span>02:59</span> Another approach</button><button type="button" data-time="256" aria-controls="video-tray-clutter"><span>04:16</span> Move outside</button></div></figure></div>
 <h4>2.1.3 Who decides to retry a missed grasp?</h4>
 <p>Both interfaces use the same localization, grasp and release tools. Suppose the gripper closes but the cube stays in the tray. With stepwise calls, the model reads the return and requests localization again. A CAP program can request a fresh location on that return within the same execution. Table 1 reports the median number of model decisions per trial.</p></section><section id="tools" class="subsection"><h3>2.2 Tool granularity and execution cost</h3><h4 id="grasp-example">2.2.1 One grasp: when does the model get control back?</h4><p>The pseudocode shows what sits inside each interface. Semantic takes an object name and handles grasping, a test lift and verification in one call. The Fine column shows the device interfaces underlying its motion primitives. They return measured positions, gripper opening or driver status.</p><div class="tool-pair"><figure><figcaption><b>Semantic</b></figcaption><pre><code>def pick(object_name: str) -&gt; str:
+    # 1. Perception: find the named object in the RGB-D frame.
     rgbd = camera.capture()
     mask = grounding_sam(rgbd.rgb, object_name)
     if not reliable_mask(mask):
         return &quot;not_found&quot;
+
+    # 2. Grasp pose: fit the grasp to the object&#x27;s 3D points.
     cloud = unproject(rgbd, mask)
     grasp = fit_grasp_pca(cloud)
 
+    # 3. Planning: approach the grasp via a pregrasp pose.
     path = planner.plan_via(
         robot.pose(), pregrasp(grasp), grasp.pose)
     if path is None:
         return &quot;unreachable&quot;
+
+    # 4. Execution: follow the path, close and test-lift.
     if not execute_checked(path):
         return &quot;motion_failed&quot;
     robot.close_gripper(grasp.width)
     if not test_lift_checked():
         return &quot;lift_failed&quot;
 
+    # 5. Verification: check whether the object lifted with the gripper.
     seen = track_target(camera.capture(), mask)
     if seen.held_clear_of_surface:
         return &quot;grasped&quot;
     if seen.on_surface and seen.gripper_empty:
         return &quot;empty_grasp&quot;
     return &quot;unconfirmed&quot;</code></pre></figure><figure><figcaption><b>Fine</b></figcaption><pre><code>def set_joint_positions(q_rad, duration_s):
+    # Move to joint angles in radians over the requested duration.
     driver.follow_joint_path(
         interpolate(robot.q(), q_rad, duration_s))
     return driver.joint_positions(), driver.status()
 
 def set_cartesian_pose(pose_mm_deg, frame):
+    # Express the target (mm, degrees) in the driver&#x27;s frame.
     target = to_driver_pose(pose_mm_deg, frame)
     driver.command_pose(target)
     return driver.measured_pose(), driver.ik_status()
 
 def set_gripper(width_mm, force_n):
+    # Set opening (mm) and force (N), then read the actual opening.
     driver.command_gripper(width_mm, force_n)
     return driver.opening_mm(), driver.status()
 
 def set_impedance(kp, kd):
+    # Set stiffness and damping gains and read back driver status.
     driver.set_gains(kp, kd)
     return driver.status()</code></pre></figure></div><h4 id="tool-levels">2.2.2 What does each return value establish?</h4><p>The example <code>pick</code> verifies the lift internally. The experimental <code>grasp</code> in §1.2 returns after closure and also maps an obstructed closure (<code>blocked</code>) to <code>grasped</code>. A separate lift and a fresh view distinguish a cube held between the fingers from contact with the tray rim. <a href='#ref-guava'>[1]</a></p><p>In the <code>pick</code> example, <code>empty_grasp</code> means that after the lift the target is still on the surface and the fingers are visibly empty. The model can re-localize and try again. Occlusion yields <code>unconfirmed</code>, for which a new viewpoint is more useful. A measured opening or pose alone cannot distinguish those outcomes.</p><p>With GPT‑6 Astra fixed, fine tools score 39/80 and semantic tools score 62/80. Two mechanisms could explain the difference. The model may save several fragile coordinate hand-offs, or the grasp implementation may contain a better localizer or hidden retries. Counting tool names cannot distinguish these effects.</p><div id="fig-paired" class="table-wrap "><table><caption>Table 1 · GPT‑6 Astra fixed, 80 matched starts across the four tasks.</caption><thead><tr><th scope="col">Decision interface</th><th scope="col">Success</th><th scope="col">Median decisions per trial</th></tr></thead><tbody><tr><td>Fine tools</td><td>39/80</td><td>15</td></tr><tr><td>Semantic tools</td><td>62/80</td><td>7</td></tr><tr><td>CAP</td><td>57/80</td><td>3</td></tr></tbody></table></div><p>A CAP program can check for a hold before lifting and retry immediately after a miss. A faulty holding signal can also send it down the wrong branch. One model decision may therefore trigger several physical closures.</p><p>For a clean retest, expand a semantic call into its primitive trace. Match the localizer, holding threshold, approach path and retry allowance, then let GPT sequence those primitives. If the gain appears only when local re-localization is enabled, credit that change to the executor.</p><h4 id="tool-representation">2.2.3 Action granularity and action naming</h4><p>RT-H derives motion phrases from proprioceptive signals in demonstrations. Its policy predicts a phrase, then conditions the robot action on the image, task and phrase. Assigning each phrase a unique integer preserves the hierarchy but removes the words shared by “forward” and “forward and left.” Average performance fell across eight tasks. A useful exception was opening and closing a pistachio jar, where clustering actions directly worked better. The authors suggest that clustering preserved small motions lost at the labeling threshold. <a href='#ref-rth'>[5]</a></p><p>Show-Harness kept the executor fixed and varied the names of six translation commands and the availability of written directions. Arbitrary symbols with a direction key performed close to the default. When the model had to infer the symbol mapping by probing, only 1 of 20 block-or-banana-to-plate trials succeeded. The movement per command stayed the same across this representation ablation. <a href='#ref-show'>[6]</a></p><p>Across our 80 matched starts, semantic tools yielded 23 more successes than fine tools. To separate possible causes, we could evaluate descriptive names and anonymous IDs at each granularity. Both naming conditions would retain identical argument, unit, return-value and effect descriptions, with the executor, retry budget and layouts fixed. Within each granularity this tests naming. Across granularities it tests where the model regains control.</p><h4>2.2.4 Failure attribution and target binding</h4>
 <p>Red-object collection involves three decisions. The model specifies a target, the localizer binds the description to an instance, and the executor chooses an approach. A correct description can produce a mask that includes a neighbor; correct binding can still lead to collision during descent. Figure 1 assigns each failed trial to its earliest observable deviation and retains later events for diagnosis.</p>

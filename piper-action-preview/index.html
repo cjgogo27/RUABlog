@@ -100,43 +100,54 @@ main h3{margin-top:30px}
 <div class="inline-replays"><figure class="bench-case" id="bench-tray-simple"><video id="video-tray-simple" controls playsinline preload="none" poster="field-clips/tray-simple.webp" src="field-clips/tray-simple.mp4" aria-label="托盘取块 · 简单桌面"></video><figcaption><strong>托盘取块 · 简单桌面</strong><small>正常任务 · 顶视 · 全程 06:44</small><p>盘里只有一个蓝块。把画面停在抬升和落放两处，能分别看到方块离开盘沿和在盘外着桌。</p></figcaption><div class="bench-cues"><button type="button" data-time="0" aria-controls="video-tray-simple"><span>00:00</span> 盘内蓝块</button><button type="button" data-time="80" aria-controls="video-tray-simple"><span>01:20</span> 接近方块</button><button type="button" data-time="210" aria-controls="video-tray-simple"><span>03:30</span> 盘外落放</button></div></figure><figure class="bench-case" id="bench-tray-clutter"><video id="video-tray-clutter" controls playsinline preload="none" poster="field-clips/tray-clutter.webp" src="field-clips/tray-clutter.mp4" aria-label="托盘取块 · 杂物桌面"></video><figcaption><strong>托盘取块 · 杂物桌面</strong><small>复杂场景与干扰 · 顶视 · 全程 07:39</small><p>仍是从盘里取蓝块，但盘外多了积木和小物件。与简单桌面的录像对照，看夹爪选择了哪一块空桌面来放置。</p></figcaption><div class="bench-cues"><button type="button" data-time="0" aria-controls="video-tray-clutter"><span>00:00</span> 盘外可用空间</button><button type="button" data-time="179" aria-controls="video-tray-clutter"><span>02:59</span> 再次接近</button><button type="button" data-time="256" aria-controls="video-tray-clutter"><span>04:16</span> 移到盘外</button></div></figure></div>
 <h4>2.1.3 抓空之后，谁决定重试？</h4>
 <p>两种接口共用定位、抓取和释放工具。以托盘取块为例，夹爪闭合后方块仍在盘底：逐步调用需要模型读取反馈，再请求定位；CAP 可以在同一次程序执行中按反馈重新定位。表 1 列出每场模型决策次数的中位数。</p></section><section id="tools" class="subsection"><h3>2.2 工具粒度与执行开销</h3><h4 id="grasp-example">2.2.1 同一次抓取，在哪一步交还控制？</h4><p>下面的伪代码展示两种接口的内部实现。Semantic 接收物体名称，把抓取、试抬和验证封装在一次调用里。Fine 一栏展开运动原语底层的设备接口，返回实测位置、夹爪开度或驱动状态。</p><div class="tool-pair"><figure><figcaption><b>Semantic</b></figcaption><pre><code>def pick(object_name: str) -&gt; str:
+    # 1. Perception: find the named object in the RGB-D frame.
     rgbd = camera.capture()
     mask = grounding_sam(rgbd.rgb, object_name)
     if not reliable_mask(mask):
         return &quot;not_found&quot;
+
+    # 2. Grasp pose: fit the grasp to the object&#x27;s 3D points.
     cloud = unproject(rgbd, mask)
     grasp = fit_grasp_pca(cloud)
 
+    # 3. Planning: approach the grasp via a pregrasp pose.
     path = planner.plan_via(
         robot.pose(), pregrasp(grasp), grasp.pose)
     if path is None:
         return &quot;unreachable&quot;
+
+    # 4. Execution: follow the path, close and test-lift.
     if not execute_checked(path):
         return &quot;motion_failed&quot;
     robot.close_gripper(grasp.width)
     if not test_lift_checked():
         return &quot;lift_failed&quot;
 
+    # 5. Verification: check whether the object lifted with the gripper.
     seen = track_target(camera.capture(), mask)
     if seen.held_clear_of_surface:
         return &quot;grasped&quot;
     if seen.on_surface and seen.gripper_empty:
         return &quot;empty_grasp&quot;
     return &quot;unconfirmed&quot;</code></pre></figure><figure><figcaption><b>Fine</b></figcaption><pre><code>def set_joint_positions(q_rad, duration_s):
+    # Move to joint angles in radians over the requested duration.
     driver.follow_joint_path(
         interpolate(robot.q(), q_rad, duration_s))
     return driver.joint_positions(), driver.status()
 
 def set_cartesian_pose(pose_mm_deg, frame):
+    # Express the target (mm, degrees) in the driver&#x27;s frame.
     target = to_driver_pose(pose_mm_deg, frame)
     driver.command_pose(target)
     return driver.measured_pose(), driver.ik_status()
 
 def set_gripper(width_mm, force_n):
+    # Set opening (mm) and force (N), then read the actual opening.
     driver.command_gripper(width_mm, force_n)
     return driver.opening_mm(), driver.status()
 
 def set_impedance(kp, kd):
+    # Set stiffness and damping gains and read back driver status.
     driver.set_gains(kp, kd)
     return driver.status()</code></pre></figure></div><h4 id="tool-levels">2.2.2 从工具返回值能判断什么？</h4><p>上例中的 <code>pick</code> 将验证放在工具内部。§1.2 实验所用的 <code>grasp</code> 则在夹爪闭合后返回，并将闭合受阻的 <code>blocked</code> 也映射为 <code>grasped</code>。要区分夹住方块和碰到盘沿，需要再抬升并观察方块是否离开盘底。 <a href='#ref-guava'>[1]</a></p><p>在 <code>pick</code> 的示例中，<code>empty_grasp</code> 表示试抬后看到目标仍在支撑面上、夹爪内为空。模型可以据此重新定位。目标被遮挡时返回 <code>unconfirmed</code>，此时更有用的下一步是换个视角。硬件接口返回的开度或位姿本身回答不了这两个问题。</p><p>固定 GPT‑6 Astra，细粒度工具与语义工具分别完成 39/80 和 62/80。两个机制可能解释这一差异。其一，模型少做了几次本可以由控制器稳定完成的坐标传递；其二，一个“抓取”内部可能已经包含了更好的定位或重试。只比较工具名字的数量，区分不了它们。</p><div id="fig-paired" class="table-wrap "><table><caption>表 1 · 固定 GPT‑6 Astra，四任务共 80 个配对初态。</caption><thead><tr><th scope="col">选择方式</th><th scope="col">成功</th><th scope="col">每场模型决策中位数</th></tr></thead><tbody><tr><td>细粒度工具</td><td>39/80</td><td>15</td></tr><tr><td>语义工具</td><td>62/80</td><td>7</td></tr><tr><td>CAP</td><td>57/80</td><td>3</td></tr></tbody></table></div><p>CAP 可以预先写好“确认持握后抬升”的条件。若读到抓空，程序可以立即重试；若持握信号有误，程序也会据此执行错误动作。因此一次模型决策可能对应多次实际闭合。</p><p>控制这一混杂因素的方法是把同一条粗工具的调用记录展开成细原语，逐项核对定位器、夹持阈值、接近路径和允许重试次数。再比较由 GPT 重新组织这些原语的版本。如果收益只在启用工具内重定位后出现，就应把收益记给执行器。</p><h4 id="tool-representation">2.2.3 动作拆多细，和动作怎么命名</h4><p>RT-H 从示范轨迹的本体感受信号生成运动短语。策略先预测短语，再结合图像、任务和短语预测机器人动作。把每种短语替换成唯一整数后，分层依然存在，但“向前”和“向前并向左”失去了共享的词。在八项任务上，这个版本的平均表现下降。也有值得保留的例外：直接聚类动作的版本在开、关开心果罐上表现更好，作者推测聚类保留了语言标注阈值滤掉的微小运动。 <a href='#ref-rth'>[5]</a></p><p>Show-Harness 固定执行器，只改变六个平移动作的名字，以及是否告诉模型每个动作会往哪个方向移动。把名称换成任意符号、但保留方向说明，效果接近默认配置；符号和方向的对应也要模型靠试探来猜时，把方块或香蕉放到盘中的 20 场只成功 1 场。这个消融改变了模型对动作含义的了解，每步覆盖的运动相同。 <a href='#ref-show'>[6]</a></p><p>在我们的 80 个配对摆位上，语义工具比细粒度工具多成功 23 场。要拆分这 23 场背后的原因，可以在两种粒度下分别用原名和匿名编号各跑一组，给两组相同的参数、单位、返回值和动作说明，并固定执行器、重试预算和摆位。这样，同一粒度内能比较命名，两种粒度间能比较交还控制的位置。</p><h4>2.2.4 失败归因与目标绑定</h4>
 <p>红色物体入篮包含三次独立决策：模型指定目标，定位器把描述绑定到当前实例，执行器选择接近方向。目标描述正确时，掩码仍可能包含相邻物体；实例正确时，下降仍可能碰撞。图 1 将每场失败归于第一个能由观测确认的偏差，其余事件保留作进一步诊断。</p>
