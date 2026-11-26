@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>How much of the teacher gap remains?</dc:title>
-    <dc:description>Figure 6 · Fifteen simulated tasks, 30 trials each, with the native criterion in Table 3. The student gains 117 successes, leaving a gap of 161.</dc:description>
+    <dc:description>Figure 7 · Fifteen simulated tasks, 30 trials each, with the native criterion in Table 4. The student gains 117 successes, leaving a gap of 161.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -120,7 +120,7 @@ z
    </g>
   </g>
   <g id="text_11">
-   <text style="fill: #197466; font: 700 9px 'Segoe UI'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">06   /   EXISTING PROJECT RECORD · PIPER SIMULATION</text>
+   <text style="fill: #197466; font: 700 9px 'Segoe UI'; text-anchor: start" x="21.672" y="21.0528" transform="rotate(-0 21.672 21.0528)">07   /   EXISTING PROJECT RECORD · PIPER SIMULATION</text>
   </g>
   <g id="text_12">
    <text style="fill: #172c27; font: 500 18px 'Segoe UI'; text-anchor: start" x="21.672" y="53.8704" transform="rotate(-0 21.672 53.8704)">How much of the teacher gap remains?</text>
